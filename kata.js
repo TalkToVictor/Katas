@@ -86,3 +86,59 @@ function postfixEvaluator(string) {
     }
 
     return split[0]
+
+    // Write a function that takes 1 number (1-100) and returns the smallest combination of coins that equal that number
+    // for example exactChange(77)
+    // would return [25, 25, 25, 1, 1]
+    // so 25 cents, another 25 cents, another 25 cents, 1 penny and 1 penny
+    // exactChange(12) would return [10, 1, 1]
+    // 10 cents, 1 penny, 1 penny
+    // if u return [5, 5, 1, 1] that would be incorrect because [10, 1, 1] uses fewer coins
+
+    solution
+    function exactChange(cents) {
+        let x = cents;
+        let o = x % 5;
+        let f = 0;
+        let t = 0;
+        let q = 0;
+        x -= o;
+        while (x >= 25) {
+            x -= 25;
+            q++;
+        }
+        while (x >= 10) {
+            x -= 10;
+            t++;
+        }
+        while (x >= 5) {
+            x -= 5;
+            f++;
+        }
+        return getResults(q, t, f, o);
+    }
+
+    function getResults(q, t, f, o) {
+        let str = "";
+        if (q) {
+            for (i = 0; i < q; i++) {
+                str += " 25";
+            }
+        }
+        if (t) {
+            for (i = 0; i < t; i++) {
+                str += " 10";
+            }
+        }
+        if (f) {
+            for (i = 0; i < f; i++) {
+                str += " 5";
+            }
+        }
+        if (o) {
+            for (i = 0; i < o; i++) {
+                str += " 1";
+            }
+        }
+        return str.slice(1);
+    }
