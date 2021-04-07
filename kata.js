@@ -936,18 +936,28 @@ function postfixEvaluator(string) {
 
             // x += 1;
         }
-
-        animate();
-
-        function animate1() {
-            requestAnimationFrame(animate1);
-            c.beginPath();
-            c.arc(x1, y1, 30, 0, Math.PI * 2, false);
-            c.strokeStyle = "yellow"
-            c.stroke();
-
-            x1 += 1;
-        }
-
-        animate1();
     }
+
+    animate();
+
+    function animate1() {
+        requestAnimationFrame(animate1);
+        c.beginPath();
+        c.arc(x1, y1, 30, 0, Math.PI * 2, false);
+        c.strokeStyle = "yellow"
+        c.stroke();
+
+        x1 += 1;
+    }
+
+    animate1();
+}
+
+//function duplicateEncode(word){
+// ...
+
+
+
+var breakChocolate = function (n, m) {
+    return Math.max(0, m * n - 1);
+};
