@@ -986,3 +986,62 @@ console.log(moveZeros(arry)) // [false,[],{},1,1,2,1,'3','a',0,0]
 console.log(moveZeros([false, 1, 0, 1, 2, 0, 1, 3, "a"])) // returns[false,1,1,2,1,3,"a",0,0]
 
 console.log(moveZeros([1, 2, 0, 1, 0, 1, 0, 3, 0, 1])) // [1,2,1,1,3,1,0,0,0,0]
+
+
+
+
+//Number of people in the bus
+//There is a bus moving in the city, and it takes and drop some people in each bus stop.
+
+//You are provided with a list (or array) of integer arrays (or tuples). Each integer array has two items which represent number of people get into bus (The first item) and number of people get off the bus (The second item) in a bus stop.
+
+//Your task is to return number of people who are still in the bus after the last bus station (after the last array). Even though it is the last bus stop, the bus is not empty and some people are still in the bus, and they are probably sleeping there :D
+
+//Take a look on the test cases.
+
+//Please keep in mind that the test cases ensure that the number of people in the bus is always >= 0. So the return integer can't be negative.
+
+
+//The second value in the first integer array is 0, since the bus is empty in the first bus stop.
+
+
+
+
+var number = function (busStops) {
+    // Good Luck!
+}
+
+
+//solution
+var number = function (busStops) {
+    var totalPeople = 0;
+    for (var i = 0; i < busStops.length; i++) {
+        totalPeople += busStops[i][0];
+        totalPeople -= busStops[i][1];
+    }
+    return totalPeople;
+
+}
+
+//solution
+const number = busStops => busStops.reduce((p, n) => p + n[0] - n[1], 0)
+
+
+//solution
+var number = function (busStops) {
+    return busStops.map(x => x[0] - x[1]).reduce((x, y) => x + y);
+}
+
+
+
+//solution
+
+const number = busStops => {
+    const sumOfIndex = x => busStops.map(arr => arr[x]).reduce((a, b) => a + b, 0);
+    let enter = sumOfIndex(0);
+    let leave = sumOfIndex(1);
+    return enter - leave;
+}
+
+
+
