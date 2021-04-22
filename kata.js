@@ -1054,3 +1054,14 @@ var number = function (busStops) {
     });
     return numbersIn - numbersOut;
 }
+
+
+//solution
+var number = function (busStops) {
+    // Good Luck!
+    let busCounter = 0;
+    for (let busStop of busStops) {
+        busCounter += busStop[0] -= busStop[1]
+    }
+    return busCounter;
+}
