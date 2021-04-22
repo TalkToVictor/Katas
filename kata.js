@@ -1044,4 +1044,13 @@ const number = busStops => {
 }
 
 
-
+//solution
+var number = function (busStops) {
+    let numbersIn = 0;
+    let numbersOut = 0;
+    busStops.forEach(item => {
+        numbersIn += item[0];
+        numbersOut += item[1];
+    });
+    return numbersIn - numbersOut;
+}
