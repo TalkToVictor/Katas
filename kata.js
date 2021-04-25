@@ -1065,3 +1065,19 @@ var number = function (busStops) {
     }
     return busCounter;
 }
+
+
+function binToDec(bin) {
+    let num = bin;
+    let tot = 0;
+    let base = 1;
+
+    let len = num.length;
+    for (let i = len - 1; i >= 0; i--) {
+        if (num[i] == '1')
+            tot += base;
+        base = base * 2;
+    }
+
+    return tot;
+}
