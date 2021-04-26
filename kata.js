@@ -1081,3 +1081,17 @@ function binToDec(bin) {
 
     return tot;
 }
+
+
+//solution
+
+function binToDec(bin) {
+    let sum = 0;
+    bin = bin.split("");
+    bin.forEach(function (num, index) {
+        if (num === "1") {
+            sum += Math.pow(2, bin.length - index - 1);
+        }
+    });
+    return sum;
+}
