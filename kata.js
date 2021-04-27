@@ -1095,3 +1095,19 @@ function binToDec(bin) {
     });
     return sum;
 }
+
+//SOLUTION
+
+function SeriesSum(n) {
+    let total = 0;
+
+    for (let i = 0; i < n; i++) {
+        const denominator = 1 + (3 * i);
+        const fraction = (1 / denominator);
+
+        total += fraction;
+    }
+
+    return total.toFixed(2)
+    // Happy Coding ^_^
+}
