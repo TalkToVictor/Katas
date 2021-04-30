@@ -1111,3 +1111,22 @@ function SeriesSum(n) {
     return total.toFixed(2)
     // Happy Coding ^_^
 }
+
+
+
+//solution
+
+
+function SeriesSum(n) {
+    n = n - 1
+    let x = 0
+    let result = 1;
+    if (n != -1) {
+        for (i = 4; i < n * 3 + 2; i = i + 3) {
+            result = result + 1 / i;
+        }
+    } else {
+        return x.toFixed(2)
+    }
+    return result.toFixed(2);
+}
