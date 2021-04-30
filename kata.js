@@ -1130,3 +1130,28 @@ function SeriesSum(n) {
     }
     return result.toFixed(2);
 }
+
+
+//solution
+
+function SeriesSum(n) {
+    var str_arr = [], dec_arr = [], x, y;
+    if (n == 0 || n == 1) {
+        str_arr = [n];
+        dec_arr = str_arr;
+    }
+    if (n >= 2) {
+        str_arr = ["1", "1/4"];
+        dec_arr = [1, 1 / 4];
+    }
+    while (str_arr.length < n) {
+        x = str_arr[str_arr.length - 1];
+        y = parseInt(x.toString().substr(2)) + 3;
+        str_arr.push("1/".concat(y));
+        dec_arr.push(1 / y);
+    }
+    var result = dec_arr.reduce(function (sum, current) {
+        return sum + current;
+    }, 0);
+    return result.toFixed(2);
+}
