@@ -1154,4 +1154,22 @@ function SeriesSum(n) {
         return sum + current;
     }, 0);
     return result.toFixed(2);
+
+
+    // solution
+    function SeriesSum(n) {
+        if (!n) return "0.00"
+
+        var iterator = function (n, i = 1, divider = 1, acum = 1) {
+            if (i > 1) acum += 1 / divider
+
+            if (i < n) {
+                divider += 3;
+                return iterator(n, i + 1, divider, acum);
+            }
+            return acum.toFixed(2);
+        }
+
+        return iterator(n);
+    }
 }
