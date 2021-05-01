@@ -1173,3 +1173,23 @@ function SeriesSum(n) {
         return iterator(n);
     }
 }
+
+
+//solution
+function SeriesSum(n) {
+    if (n === 0) { return "0.00" } else {
+        let result = 0;
+        let one = [1];
+
+        for (let i = 0; i < n - 1; i++) {
+            const a = one[i];
+            one.push(a + 3);
+        };
+
+        let two = one.map(e => 1 / e);
+        for (let i = 0; i < two.length; i++) {
+            result += two[i];
+        }
+        return result.toFixed(2);
+    }
+};
