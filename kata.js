@@ -1193,3 +1193,23 @@ function SeriesSum(n) {
         return result.toFixed(2);
     }
 };
+
+
+//solution
+
+function SeriesSum(n) {
+    let sum = 1;// create variable for the numerator
+    let den = 1;// create variable for the denominator
+
+    if (n === 0) {
+        return "0.00";
+    }
+
+    for (let i = 1; i < n; i++) { // increase denominator by 3, every time n increases by 1 
+        den += 3;
+        sum += (1 / den);
+    }
+    sum = sum.toFixed(2);
+    sum.toString()
+    return sum; // round the answer to 2 dec places, return as string
+}
