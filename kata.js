@@ -1235,3 +1235,29 @@ function SeriesSum(n) {
         return result.toFixed(2);
     }
 }
+
+
+
+//solution
+
+function SeriesSum(n) {
+    // Happy Coding ^_^
+    let SeriesArr = [];
+    if (n !== 0) {
+        SeriesArr.push(1);
+        n = n - 1;
+    }
+    let x = 4;
+    for (i = 0; i <= n - 1; i++) {
+        SeriesArr.push(1 / x);
+        x = x + 3;
+    }
+
+    let totalSum = 0;
+    for (i = 0; i <= SeriesArr.length - 1; i++) {
+        totalSum = totalSum + SeriesArr[i];
+    }
+
+
+    return totalSum.toFixed(2);
+}
