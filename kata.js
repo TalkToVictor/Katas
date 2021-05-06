@@ -1285,3 +1285,20 @@ function SeriesSum(n) {
     }, 0);
     return result.toFixed(2);
 }
+
+//Solution
+
+function addToSeries(x) {
+    return 1 / (x * 3 + 1)
+}
+
+function SeriesSum(n) {
+    if (n === 0) { return '0.00' }
+
+    let nArr = []
+    for (i = 0; i < n; i++) {
+        nArr.push(addToSeries(i))
+    }
+
+    return String(nArr.reduce((x, total) => x + total).toFixed(2))
+}
