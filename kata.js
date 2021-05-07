@@ -1302,3 +1302,25 @@ function SeriesSum(n) {
 
     return String(nArr.reduce((x, total) => x + total).toFixed(2))
 }
+
+//solution
+
+function SeriesSum(n) {
+
+    if (n === 1) {
+        return "1.00"
+    } else if (n === 0) {
+        return "0.00"
+    }
+
+    // Happy Coding ^_^
+    let anwser = 1
+    let counter = 1
+
+    while (n > 1) {
+        anwser = anwser + (1 / (1 + 3 * counter))
+        n = n - 1
+        counter++
+    }
+    return anwser.toFixed(2).toString()
+}
