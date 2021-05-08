@@ -1324,3 +1324,23 @@ function SeriesSum(n) {
     }
     return anwser.toFixed(2).toString()
 }
+
+
+//Solution
+
+function SeriesSum(n) {
+    if (n === 0) {
+        return "0.00"
+    } else {
+        const array = [1]
+        let accumulator = 1
+        for (i = 1; i < n; i++) {
+            accumulator = accumulator + 3
+            array.push(accumulator)
+        }
+
+        const newArray = array.map((item) => 1 / item)
+        const number = newArray.reduce((a, b) => a + b)
+        return number.toFixed(2).toString()
+    }
+}
