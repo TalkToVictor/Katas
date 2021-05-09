@@ -1344,3 +1344,21 @@ function SeriesSum(n) {
         return number.toFixed(2).toString()
     }
 }
+
+
+// solution
+
+function SeriesSum(n) {
+    let x = 0;
+    let c = 1;
+    for (let i = 0; i < n; i++) {
+        x += 1 / c;
+        c += 3
+    }
+    x = (Math.round(x * 100) / 100).toString()
+    if (x.length == 1) { x += '.' }
+    while (x.length != 4) {
+        x += '0'
+    }
+    return x
+}
