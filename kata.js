@@ -1431,3 +1431,23 @@ function repeats(arr) {
     console.log(result)
     return result.reduce((sum, current) => sum + current, 0);
 };
+
+//solution
+function repeats(arr) {
+
+    const obj = {}
+    let sum = 0;
+
+    arr.forEach((v) => {
+        if (!obj[v]) obj[v] = 1
+        else obj[v] += 1
+    })
+
+    for (const val in obj) {
+        if (obj[val] === 1) {
+            sum += Number(val)
+        }
+    }
+
+    return sum
+};
