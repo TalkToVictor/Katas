@@ -1451,3 +1451,28 @@ function repeats(arr) {
 
     return sum
 };
+
+//SOLUTION
+
+function repeats(arr) {
+    let repeat = [];
+    arr.sort((a, b) => a - b)
+    //   console.log(arr)
+    for (i = 0; i < arr.length; i++) {
+        switch (i) {
+            case 0:
+                if (arr[i] !== arr[i + 1])
+                    repeat.push(arr[i])
+                break;
+            case arr.length - 1:
+                if (arr[i] !== arr[i - 1])
+                    repeat.push(arr[i])
+                break;
+            default:
+                if (arr[i] !== arr[i + 1] && arr[i] !== arr[i - 1])
+                    repeat.push(arr[i])
+                break;
+        }
+    }
+    return repeat.reduce((a, b) => a + b, 0);
+}
