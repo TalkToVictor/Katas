@@ -1476,3 +1476,30 @@ function repeats(arr) {
     }
     return repeat.reduce((a, b) => a + b, 0);
 }
+
+//Solution
+
+function repeats(arr) {
+    var counter1 = 1;
+    var sum1 = 0;
+    for (var i = 0; i < arr.length; i++) {
+        counter1 = 1;
+        for (var j = 0; j < arr.length; j++) {
+            if (i != j) {
+                if (arr[i] == arr[j]) {
+                    counter1 += 1;
+                }
+
+                if (counter1 > 1) {
+                    break;
+                }
+            }
+        }
+
+        if (counter1 == 1) {
+            sum1 += arr[i];
+        }
+    }
+
+    return sum1;
+};
