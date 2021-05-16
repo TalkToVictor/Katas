@@ -1503,3 +1503,21 @@ function repeats(arr) {
 
     return sum1;
 };
+
+//SOLUTION
+
+function repeats(arr) {
+    //..
+    const newArr = [...arr];
+
+    newArr.sort((a, b) => { return a - b });
+
+    for (let i = 0; i < newArr.length; i++) {
+        if (newArr[i] === newArr[i - 1]) {
+            newArr.splice(i - 1, 2);
+            i--;
+        }
+    }
+    console.log(newArr);
+    return newArr.reduce((a, b) => { return a + b }, 0);
+};
