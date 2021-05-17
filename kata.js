@@ -1521,3 +1521,21 @@ function repeats(arr) {
     console.log(newArr);
     return newArr.reduce((a, b) => { return a + b }, 0);
 };
+
+//solution
+
+function repeats(arr) {
+    let singles = [];
+    arr.forEach((num) => {
+        let counter = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (num === arr[i]) {
+                counter++
+            }
+        }
+        if (counter === 1) {
+            singles.push(num);
+        }
+    })
+    return singles[0] + singles[1];
+};
