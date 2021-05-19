@@ -1566,3 +1566,23 @@ const repeats = (arr) => {
 };
 
 
+//solution
+
+function repeats(arr) {
+    let obj = {}
+    for (let i = 0; i < arr.length; i++) {
+        if (!(arr[i] in obj)) {
+            obj[arr[i]] = 0
+        }
+        obj[arr[i]]++
+    }
+    let sum = 0
+    for (let keys in obj) {
+        if (obj[keys] === 1) {
+            sum += +keys
+        }
+    }
+    return sum
+};
+
+
