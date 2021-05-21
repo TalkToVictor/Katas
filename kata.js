@@ -1584,5 +1584,12 @@ function repeats(arr) {
     }
     return sum
 };
+// solutions
+
+function repeats(arr) {
+    const map = new Map();
+    arr.forEach(n => map.set(n, map.has(n) ? map.get(n) + 1 : 1));
+    return Array.from(map).reduce((a, c) => c[1] === 1 ? a + c[0] : a, 0);
+};
 
 
