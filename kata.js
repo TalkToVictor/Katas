@@ -1606,3 +1606,10 @@ function repeats(arr) {
 
     return equation.reduce((acc, num) => acc + num)
 };
+
+// solution
+
+function repeats(arr) {
+    return arr.filter(item => arr.indexOf(item) === arr.lastIndexOf(item))
+        .reduce((acc, val) => acc + val, 0)
+};
