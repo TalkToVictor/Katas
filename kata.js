@@ -1613,3 +1613,7 @@ function repeats(arr) {
     return arr.filter(item => arr.indexOf(item) === arr.lastIndexOf(item))
         .reduce((acc, val) => acc + val, 0)
 };
+
+// solution
+
+const repeats = (arr) => arr.reduce((reducer, item, ind, array) => reducer += array.filter(i => i === item).length === 1 ? item : 0, 0);
