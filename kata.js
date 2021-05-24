@@ -1617,3 +1617,11 @@ function repeats(arr) {
 // solution
 
 const repeats = (arr) => arr.reduce((reducer, item, ind, array) => reducer += array.filter(i => i === item).length === 1 ? item : 0, 0);
+
+//solution
+const { sum, countBy } = require('lodash')
+
+function repeats(arr) {
+    const count = countBy(arr)
+    return sum(arr.filter(x => count[x] == 1))
+};
