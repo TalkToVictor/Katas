@@ -1625,3 +1625,14 @@ function repeats(arr) {
     const count = countBy(arr)
     return sum(arr.filter(x => count[x] == 1))
 };
+
+//solution
+
+function repeats(arr) {
+    var obj = arr.reduce((acc, e) => {
+        acc[e] = acc[e] + 1 || 1;
+        return acc;
+    }, {});
+    var freq = Object.keys(obj).sort((a, b) => obj[a] - obj[b]).map(e => Number(e));
+    return freq[0] + freq[1];
+};
