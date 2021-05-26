@@ -1636,3 +1636,7 @@ function repeats(arr) {
     var freq = Object.keys(obj).sort((a, b) => obj[a] - obj[b]).map(e => Number(e));
     return freq[0] + freq[1];
 };
+
+//solution
+
+repeats = a => a.filter(r => a.indexOf(r) == a.lastIndexOf(r)).reduce((a, b) => a + b, 0)
