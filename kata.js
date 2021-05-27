@@ -1640,3 +1640,11 @@ function repeats(arr) {
 //solution
 
 repeats = a => a.filter(r => a.indexOf(r) == a.lastIndexOf(r)).reduce((a, b) => a + b, 0)
+
+//solution
+
+const repeats = arr => {
+    return arr.reduce(([A, S], x) => {
+        return A[x] ? [A, S - x] : [Object.assign({ [x]: 1 }, A), S + x];
+    }, [{}, 0])[1];
+}
