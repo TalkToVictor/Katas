@@ -1648,3 +1648,9 @@ const repeats = arr => {
         return A[x] ? [A, S - x] : [Object.assign({ [x]: 1 }, A), S + x];
     }, [{}, 0])[1];
 }
+
+//solution
+
+function repeats(arr) {
+    return arr.reduce((a, c) => arr.filter(x => x == c).length > 1 ? a : a + c, 0);
+};
