@@ -1654,3 +1654,16 @@ const repeats = arr => {
 function repeats(arr) {
     return arr.reduce((a, c) => arr.filter(x => x == c).length > 1 ? a : a + c, 0);
 };
+
+//solution
+
+function repeats(arr) {
+    arr.sort((a, b) => a - b);
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === arr[i + 1]) {
+            arr = arr.filter(v => v !== arr[i]);
+            i--;
+        };
+    };
+    return arr.reduce((a, v) => a + v, 0);
+};
