@@ -1681,3 +1681,10 @@ function repeats(arr) {
 
     return uniques.reduce((a, b) => a + b);
 };
+
+//solution 
+
+function repeats(arr) {
+    return arr.sort((a, b) => a - b).map((x, i) => x == arr[i + 1] || x == arr[i - 1] ? x.toString() : x)
+        .filter(x => typeof x == 'number').reduce((a, b) => a + b, 0)
+};
