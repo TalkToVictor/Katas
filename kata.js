@@ -1688,3 +1688,14 @@ function repeats(arr) {
     return arr.sort((a, b) => a - b).map((x, i) => x == arr[i + 1] || x == arr[i - 1] ? x.toString() : x)
         .filter(x => typeof x == 'number').reduce((a, b) => a + b, 0)
 };
+
+// Solution
+
+function repeats(arr) {
+    //..
+    return arr.filter(item => arr.indexOf(item) === arr.lastIndexOf(item)).reduce((acc, val) => acc + val)
+}
+
+    // uniqueArray = a.filter(function(item, pos) {
+    //     return a.indexOf(item) == pos;
+    // })
