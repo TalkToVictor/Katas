@@ -1696,6 +1696,18 @@ function repeats(arr) {
     return arr.filter(item => arr.indexOf(item) === arr.lastIndexOf(item)).reduce((acc, val) => acc + val)
 }
 
-    // uniqueArray = a.filter(function(item, pos) {
-    //     return a.indexOf(item) == pos;
-    // })
+// uniqueArray = a.filter(function(item, pos) {
+//     return a.indexOf(item) == pos;
+// })
+
+//solution
+
+function repeats(arr) {
+    var result = {};
+    var array = [];
+    arr.forEach(item => result[item] ? result[item]++ : result[item] = 1);
+    array = Object.entries(result);
+    array = array.filter(valor => valor.includes(1));
+    array = array.map(item => item[0]).reduce((a, b) => Number(a) + Number(b));
+    return array;
+};
