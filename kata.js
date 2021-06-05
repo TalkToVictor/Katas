@@ -1762,3 +1762,24 @@ function count(a, i) {
             result++;
     return result;
 }
+
+// solution
+
+function repeats(arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        let p = 0;
+        for (let j = 0; j < arr.length; j++) {
+            if (i == j) {
+            } else if (arr[i] == arr[j]) {
+                p = 1;
+            } else {
+            }
+        }
+        if (p == 0) {
+            sum += arr[i];
+
+        }
+    }
+    return sum;
+};
