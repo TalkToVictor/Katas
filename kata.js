@@ -1739,3 +1739,26 @@ function binarySearch(arr, key, low, high) {  // binary search
     }
     return found;
 }
+
+// solution
+function repeats(arr) {
+    unique = Array()
+    for (i = 0; i < arr.length; i++) {
+        if (count(arr, arr[i]) < 2) {
+            unique.push(arr[i])
+        }
+    }
+    return unique.reduce(sum)
+};
+
+let sum = (value, arr) => {
+    return value + arr
+}
+
+function count(a, i) {
+    var result = 0;
+    for (var o in a)
+        if (a[o] == i)
+            result++;
+    return result;
+}
