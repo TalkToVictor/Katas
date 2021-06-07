@@ -1836,3 +1836,17 @@ function repeats(arr) {
     return sumNumbersArr;
 };
 repeats([4, 5, 7, 5, 4, 8]);
+
+//solution
+
+function repeats(arr) {
+    const set = new Set(arr);
+    const sum = arr.reduce((sum, num) => sum + num)
+    const distinct = Array.from(set)
+    const sumDistinct = distinct.reduce((sum, num) => sum + 2 * num, 0)
+    return sumDistinct - sum
+    console.log({ sum })
+    console.log({ set })
+    console.log({ distinct })
+    console.log({ sumDistinct })
+};
