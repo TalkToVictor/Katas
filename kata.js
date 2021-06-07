@@ -1783,3 +1783,37 @@ function repeats(arr) {
     }
     return sum;
 };
+
+
+// solution
+
+function repeats(arr) {
+    let uniqueArray = [];
+    let sorted_arr = arr.slice().sort();
+    // Loop through array values
+    for (i = 0; i < arr.length; i++) {
+        //console.log(arr[i])
+        if (uniqueArray.indexOf(arr[i]) === -1) {
+            //  console.log('j')
+            uniqueArray.push(arr[i]);
+        } else {
+            // console.log('fff')
+        }
+    }
+    console.log(uniqueArray)
+
+
+    let results = [];
+    for (let i = 0; i < sorted_arr.length - 1; i++) {
+        if (sorted_arr[i + 1] == sorted_arr[i]) {
+            results.push(sorted_arr[i]);
+        }
+    }
+
+
+    var array3 = uniqueArray.filter(function (obj) { return results.indexOf(obj) == -1; });
+
+    console.log(array3);
+    return array3.reduce((a, b) => a + b, 0)
+
+};
