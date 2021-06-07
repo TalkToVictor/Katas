@@ -1850,3 +1850,23 @@ function repeats(arr) {
     console.log({ distinct })
     console.log({ sumDistinct })
 };
+
+// solution
+
+
+function repeats(arr) {
+
+    let map = {};
+    arr.forEach(num => {
+        map[num] = map[num] ? map[num] += 1 : 1;
+    })
+
+    let total = 0;
+
+    for (let key in map) {
+        if (map[key] === 1) total += Number(key);
+    }
+
+    return total;
+
+};
