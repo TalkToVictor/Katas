@@ -1817,3 +1817,22 @@ function repeats(arr) {
     return array3.reduce((a, b) => a + b, 0)
 
 };
+
+// solution 
+function repeats(arr) {
+    let newArr = arr.slice(0);
+    let repeatedNumbersArr = [];
+    let uniqueNumbersArr = [];
+    let sumNumbersArr = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        newArr.shift();
+        let num = arr[i];
+        newArr.includes(num) || repeatedNumbersArr.includes(num) ? repeatedNumbersArr.push(num) : uniqueNumbersArr.push(num);
+    };
+    for (let i = 0; i < uniqueNumbersArr.length; i++) {
+        sumNumbersArr += uniqueNumbersArr[i];
+    }
+    return sumNumbersArr;
+};
+repeats([4, 5, 7, 5, 4, 8]);
