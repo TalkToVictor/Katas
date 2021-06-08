@@ -1870,3 +1870,29 @@ function repeats(arr) {
     return total;
 
 };
+
+// solution 
+function repeats(arr) {
+    //..
+    let result = []
+    for (let i = 0; i < arr.length; i++) {
+        let flag = false
+        for (let j = 0; j < result.length; j++) {
+            if (arr[i] == result[j][0]) {
+                result[j][1]++;
+                flag = true
+            }
+
+        }
+        if (flag == false) {
+            result.push([arr[i], 1])
+        }
+    }
+    let result2 = 0
+    for (let i = 0; i < result.length; i++) {
+        if (result[i][1] == 1) {
+            result2 += result[i][0]
+        }
+    }
+    return result2
+};
