@@ -1922,3 +1922,29 @@ function repeats(arr) {
     }
     return result2
 };
+
+// solution 
+function repeats(arr) {
+
+    var count_number = []; //Para contar quantidade de cada número
+    var total = 0; //Para somar valores únicos
+
+    arr.forEach(function (value) {
+
+        if (typeof count_number[value] !== 'undefined') {
+            count_number[value] = count_number[value] + 1;
+        }
+        else {
+            count_number[value] = 1;
+        }
+
+    });
+
+    count_number.forEach(function (value, index) {
+        if (value == 1) {
+            total += index;
+        }
+    });
+
+    return total;
+};
