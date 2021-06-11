@@ -1948,3 +1948,45 @@ function repeats(arr) {
 
     return total;
 };
+
+//solution
+
+function repeats(arr) {
+
+    //create empty variables. One for previous element to use in loop and the other to save values that have repeated. 
+    var a = [], b = [], prev;
+
+    //sort the array into ascending order
+    arr.sort(function (a, b) {
+        return a - b;
+    });
+
+    //Loop through the now sorted array and add numbers to a that have repeated. 
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] == prev) {
+            a.push(arr[i])
+            b.push(1)
+        }
+        prev = arr[i]
+    }
+
+    //nested loop to look at each value of arr and check if it matches any value in a, as all the value in a must be removed from arr. 
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < a.length; j++) {
+            if (arr[i] == a[j]) {
+
+                arr.splice(i, 1)
+                arr.splice(i, 1)
+            }
+        }
+    }
+
+    //Return the sum of all the elements left in the array. 
+    return arr.reduce((a, b) => a + b, 0)
+
+
+}
+let x = ([5, 10, 19, 13, 10, 13])
+
+
+repeats(x);
