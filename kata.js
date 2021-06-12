@@ -1990,3 +1990,20 @@ let x = ([5, 10, 19, 13, 10, 13])
 
 
 repeats(x);
+
+
+//  solution
+
+function repeats(arr) {
+    let singles = [];
+    let doubles = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr.indexOf(arr[i], i + 1) === -1 && doubles.indexOf(arr[i]) === -1) {
+            singles.push(arr[i]);
+        } else {
+            doubles.push(arr[i]);
+        }
+    }
+    console.log(singles);
+    return singles.reduce((a, b) => a + b);
+};
