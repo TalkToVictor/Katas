@@ -2007,3 +2007,24 @@ function repeats(arr) {
     console.log(singles);
     return singles.reduce((a, b) => a + b);
 };
+
+// solution
+
+function repeats(arr) {
+    const numbersHash = {};
+    for (let i = 0; i < arr.length; i++) {
+        const num = arr[i];
+        if (numbersHash[num]) {
+            numbersHash[num] += 1;
+        } else {
+            numbersHash[num] = 1;
+        }
+    }
+    let total = 0;
+    for (const num in numbersHash) {
+        if (numbersHash[num] == 1) {
+            total += parseInt(num);
+        }
+    }
+    return total;
+};
