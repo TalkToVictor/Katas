@@ -2028,3 +2028,19 @@ function repeats(arr) {
     }
     return total;
 };
+
+
+// Solution
+
+function repeats(arr) {
+    const x = arr.sort((a, b) => a - b);
+    for (let i = 0; i < x.length; i++) {
+        if (x[i] === x[i + 1]) {
+            x[i] = 0;
+            x[i + 1] = 0;
+        }
+    }
+
+    return x.reduce((e, i) => e + i, 0);
+
+};
