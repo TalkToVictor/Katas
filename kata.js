@@ -2041,6 +2041,12 @@ function repeats(arr) {
         }
     }
 
+    // solution 
+    function repeats(arr) {
+        return arr.filter(e => arr.indexOf(e) === arr.lastIndexOf(e)).reduce((a, b) => a + b, 0)
+    };
+
+
     return x.reduce((e, i) => e + i, 0);
 
 };
