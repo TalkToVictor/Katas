@@ -2050,3 +2050,19 @@ function repeats(arr) {
     return x.reduce((e, i) => e + i, 0);
 
 };
+
+// solution
+
+function repeats(arr) {
+    let obj = {}, unq = []
+    for (let val of arr) {
+        if (!obj[val]) obj[val] = 1
+        else {
+            obj[val]++
+        }
+    }
+    for (let val in obj) {
+        if (obj[val] < 2) unq.push(parseInt(val))
+    }
+    return unq.reduce((ac, v) => ac + v, 0)
+};
