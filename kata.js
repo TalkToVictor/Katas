@@ -2077,3 +2077,24 @@ function repeats(arr) {
     array = array.map(item => item[0]).reduce((a, b) => Number(a) + Number(b));
     return array;
 };
+
+// solution
+
+function repeats(arr) {
+    let sum = 0;
+    let sum2 = 0;
+    for (let i = 0; i < arr.length; i++) {
+        let a = arr[i];
+        for (let w = 0; w < arr.length; w++) {
+            if (a === arr[w]) {
+                sum++;
+            }
+        }
+        if (sum === 1) {
+            sum2 = sum2 + a;
+
+        }
+        sum = 0;
+    }
+    return sum2;
+};
