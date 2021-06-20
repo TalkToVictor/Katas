@@ -2098,3 +2098,15 @@ function repeats(arr) {
     }
     return sum2;
 };
+
+// solution
+
+const repeats = arr => {
+    let count = {}
+    let total = 0;
+    arr.forEach(e => count[e] != undefined ? count[e]++ : count[e] = 1)
+    for (let key in count) {
+        if (count[key] == 1) total += +key;
+    }
+    return total;
+};
