@@ -2110,3 +2110,14 @@ const repeats = arr => {
     }
     return total;
 };
+
+// solution 
+function repeats(arr) {
+    const c = counter(arr)
+    return arr.filter(x => c[x] == 1).reduce((a, b) => a + b)
+}
+function counter(e) {
+    const C = {}
+    for (const i of e) C[i] = (C[i] || 0) + 1
+    return C
+}
