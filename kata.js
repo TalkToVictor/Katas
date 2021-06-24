@@ -2145,3 +2145,8 @@ const repeats = (arr) =>
         arr.filter((y) =>
             // compare with current element
             y == x).length == 1).reduce((a, b) => a + b);
+
+
+// solution
+const getSingles = (t, i, a) => !a.slice(a.indexOf(t) + 1).includes(t)
+const repeats = a => a.filter(getSingles).reduce((x, y) => x + y)
