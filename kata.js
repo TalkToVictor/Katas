@@ -2150,3 +2150,7 @@ const repeats = (arr) =>
 // solution
 const getSingles = (t, i, a) => !a.slice(a.indexOf(t) + 1).includes(t)
 const repeats = a => a.filter(getSingles).reduce((x, y) => x + y)
+
+// solution
+
+const repeats = arr => 2 * [...(new Set(arr))].reduce((s, n) => s + n, 0) - arr.reduce((s, n) => s + n, 0);
