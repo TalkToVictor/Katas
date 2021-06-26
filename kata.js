@@ -2154,3 +2154,11 @@ const repeats = a => a.filter(getSingles).reduce((x, y) => x + y)
 // solution
 
 const repeats = arr => 2 * [...(new Set(arr))].reduce((s, n) => s + n, 0) - arr.reduce((s, n) => s + n, 0);
+
+// solution
+
+function repeats(arr) {
+    return arr
+        .filter(x => arr.indexOf(x) === arr.lastIndexOf(x))
+        .reduce((a, b) => a + b);
+};
