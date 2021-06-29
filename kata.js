@@ -2185,3 +2185,22 @@ function repeats(arr) {
     var ks = Object.keys(helper);
     return parseInt(ks[0]) + parseInt(ks[1]);
 };
+
+// solution 
+function repeats(arr) {
+
+    single = [];
+
+    for (let i = 0; i < arr.length; i++) {
+
+        if (arr.indexOf(arr[i], 0) == arr.lastIndexOf(arr[i], -1)) {
+
+            single.push(arr[i])
+
+        }
+
+    }
+
+    return single.reduce((a, b) => a + b)
+
+};
