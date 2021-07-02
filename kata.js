@@ -2229,10 +2229,16 @@ function repeats(arr) {
     // return sum
     return sum
 }
+//soluton
 
-// solution
-
-//Lembrando que o indexOf e o lastIndexOf mostram o ÍNDICE do elemento, a posição no array, então se forem iguais os index, é porque o elemento NÃO REPETE.
 function repeats(arr) {
-    return arr.filter(x => arr.indexOf(x) === arr.lastIndexOf(x))
-        .reduce((total, number) => total + number, 0)
+    let nonRepeatNums = 0;
+    for (let i = 0; i < arr.length; i++) {
+        let cloneArr = arr.slice();
+        cloneArr.splice(i, 1);
+        if (!cloneArr.includes(arr[i])) {
+            nonRepeatNums += arr[i];
+        }
+    }
+    return nonRepeatNums
+}
