@@ -2242,3 +2242,25 @@ function repeats(arr) {
     }
     return nonRepeatNums
 }
+
+// SOLUTION
+
+function repeats(arr) {
+    //..
+    let slicedArray = arr.sort();
+    let addedArray = arr.reduce((acc, cur) => { return acc + cur })
+    let regularArr = arr;
+    let newArray = [];
+    let deleteNum = 0;
+    for (let i = 0; i <= arr.length - 1; i++) {
+        if (slicedArray[i + 1] === slicedArray[i]) {
+            newArray.push(slicedArray[i])
+        } else {//do nothing
+        }
+    }
+    newArray.reduce((acc, curr) => {
+        return deleteNum = acc + curr
+    })
+    return addedArray - deleteNum * 2
+
+};
