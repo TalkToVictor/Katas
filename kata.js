@@ -2264,3 +2264,23 @@ function repeats(arr) {
     return addedArray - deleteNum * 2
 
 };
+
+// Solution
+function repeats(arr) {
+    let scarto = []
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[i] === arr[j]) {
+                scarto.push(arr[i])
+            }
+        }
+    }
+    let once = arr.filter(function (n) {
+        return !scarto.includes(n)
+    })
+    let sum = 0
+    once.forEach(function (value) {
+        sum = sum + value
+    })
+    return sum
+};
