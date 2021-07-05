@@ -2284,3 +2284,23 @@ function repeats(arr) {
     })
     return sum
 };
+
+// solution
+function repeats(arr) {
+    var sum = 0;
+    for (x = 0; x <= arr.length - 1; x++) {
+        var chck = 0;
+        for (y = 0; y <= arr.length - 1; y++) {
+            if (arr[x] == arr[y]) {
+                chck += 1;
+            }
+            if (chck > 1) {
+                break;
+            }
+        }
+        if (chck == 1) {
+            sum += arr[x];
+        }
+    }
+    return sum;
+};
