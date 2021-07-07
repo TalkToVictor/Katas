@@ -2327,3 +2327,9 @@ function repeats(arr) {
 
 
 };
+
+// solution
+
+function repeats(arr) {
+    return arr.filter(n => arr.indexOf(n) === arr.lastIndexOf(n)).reduce((acc, v) => acc + v, 0)
+};
