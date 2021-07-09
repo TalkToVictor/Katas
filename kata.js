@@ -2358,3 +2358,10 @@ function repeats(arr) {
     }
     return summa;
 };
+
+// solution
+
+function repeats(arr) {
+    let x = arr.filter((v, i) => arr.indexOf(v) !== i);
+    return arr.reduce((acc, curr) => !x.includes(curr) ? acc + curr : acc, 0)
+};
