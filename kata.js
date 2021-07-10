@@ -2365,3 +2365,11 @@ function repeats(arr) {
     let x = arr.filter((v, i) => arr.indexOf(v) !== i);
     return arr.reduce((acc, curr) => !x.includes(curr) ? acc + curr : acc, 0)
 };
+
+// solution
+
+function repeats(arr) {
+    let set = new Set()
+    arr.forEach(x => set.has(x) ? set.delete(x) : set.add(x))
+    return [...set].reduce((s, v) => s + v, 0)
+}
