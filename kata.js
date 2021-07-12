@@ -2388,3 +2388,11 @@ function repeats(arr) {
     var ks = Object.keys(helper);
     return parseInt(ks[0]) + parseInt(ks[1]);
 };
+
+// solution 
+
+function repeats(arr) {
+    return arr
+        .filter(x => arr.indexOf(x) === arr.lastIndexOf(x))
+        .reduce((a, b) => a + b);
+};
