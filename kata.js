@@ -2415,3 +2415,18 @@ function repeats(arr) {
 
     return sum;
 };
+
+// solution
+
+function repeats(arr) {
+
+    let newArr = []
+    arr = arr.sort((a, b) => a - b)
+
+    for (let i = 0; i < arr.length; i++) { if (arr[i] === arr[i + 1]) arr.splice(i, 2, 0, 0) }
+
+    let returnNum = 0;
+
+    arr.map(el => returnNum += el);
+    return returnNum
+};
