@@ -2518,3 +2518,28 @@ function repeats(arr) {
 
     return arr2.reduce((a, b) => a + b)
 };
+
+// solution 
+
+function repeats(arr) {
+    // place to store the sum
+    let sum = 0
+    // place to store the lookup table
+    let lookup = {}
+    // build up object with number of occurancies of each number
+    for (let num of arr) {
+        lookup[num] = lookup[num] + 1 || 1
+    }
+    // iterate over the values
+    for (const key in lookup) {
+        if (Object.hasOwnProperty.call(lookup, key)) {
+            // if the values is 1
+            if (lookup[key] == 1) {
+                // add the key to the sum
+                sum += +key
+            }
+        }
+    }
+    // return sum
+    return sum
+}
