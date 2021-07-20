@@ -2543,3 +2543,21 @@ function repeats(arr) {
     // return sum
     return sum
 }
+
+// solution 
+
+function repeats(arr) {
+    let result = {}
+    let resultado = 0;
+    arr.forEach((item, key) => {
+        result[item] ? result[item]++ : result[item] = 1
+    })
+
+    for (const [key, value] of Object.entries(result)) {
+        if (value === 1) {
+            resultado += Number(key)
+        }
+    }
+
+    return resultado
+};
