@@ -2561,3 +2561,15 @@ function repeats(arr) {
 
     return resultado
 };
+
+// solution
+
+function repeats(arr) {
+    var result = {};
+    var array = [];
+    arr.forEach(item => result[item] ? result[item]++ : result[item] = 1);
+    array = Object.entries(result);
+    array = array.filter(valor => valor.includes(1));
+    array = array.map(item => item[0]).reduce((a, b) => Number(a) + Number(b));
+    return array;
+};
