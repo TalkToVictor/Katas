@@ -2573,3 +2573,21 @@ function repeats(arr) {
     array = array.map(item => item[0]).reduce((a, b) => Number(a) + Number(b));
     return array;
 };
+
+
+// solution
+
+function repeats(arr) {
+    let counting = {}
+    let total = 0
+    for (let val of arr) {
+        counting[val] = (counting[val] || 0) + 1
+    }
+    for (let val2 in counting) {
+        console.log(counting[val2])
+        if (counting[val2] === 1) {
+            total += parseInt(val2)
+        }
+    }
+    return total
+};
