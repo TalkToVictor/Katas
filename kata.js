@@ -2590,4 +2590,32 @@ function repeats(arr) {
         }
     }
     return total
+}; c
+
+
+// solution
+
+function repeats(arr) {
+    //given an array of integeres return the sum of unqiue integers from the given
+    //make a object varaible to store the integers with occurences
+    let obj = {};
+    let result = 0;
+    //loop the arr
+    for (let elem of arr) {
+        if (obj[elem] === undefined) {
+            obj[elem] = 1;
+        } else {
+            obj[elem]++;
+        }
+    }
+    //add the integers into the object variable
+    //iterate the object
+    for (let elem2 in obj) {
+        if (obj[elem2] === 1) {
+            result += parseInt(elem2);
+        }
+    }
+    return result;
+    //find the value with only 1 and add them together
+    //return the sum of the two unique integers
 };
