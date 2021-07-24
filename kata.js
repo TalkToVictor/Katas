@@ -2619,3 +2619,15 @@ function repeats(arr) {
     //find the value with only 1 and add them together
     //return the sum of the two unique integers
 };
+
+// solution
+
+let counts = arr.reduce((acc, el) => {
+    !acc[el] ? acc[el] = +1 : acc[el] += 1;
+    return acc;
+}, {});
+let sum = 0;
+for (let key in counts) {
+    if (counts[key] == 1) { sum = sum + +key; }
+}
+return sum;
