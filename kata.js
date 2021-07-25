@@ -2631,3 +2631,16 @@ for (let key in counts) {
     if (counts[key] == 1) { sum = sum + +key; }
 }
 return sum;
+
+// solution
+
+function repeats(arr) {
+    let noRepeatedNumbers = [...new Set(arr)];
+    let doubleSetNumbers = [...noRepeatedNumbers, ...noRepeatedNumbers]
+    let doubleSum = doubleSetNumbers.reduce((ac, cv) => ac += cv, 0)
+    let missingTwo = arr.reduce((ac, cv) => ac += cv, 0);
+
+    return doubleSum - missingTwo;
+
+
+};
