@@ -2644,3 +2644,35 @@ function repeats(arr) {
 
 
 };
+
+// solution 
+
+function repeats(arr) {
+    let uniArr = [];
+    let uniNum = [];
+    arr.forEach((i) => {
+        if (uniArr.includes(i) && arr[i]) {
+            uniArr.push(i);
+        }
+    });
+    function arrDiff(arr1, arr2) {
+        let array = [], diff = [];
+        for (let i = 0; i < arr1.length; i++) {
+            array[arr1[i]] = true;
+        }
+        for (let i = 0; i < arr2.length; i++) {
+            if (array[arr2[i]]) {
+                delete array[arr2[i]];
+            } else {
+                array[arr2[i]] = true;
+            }
+        }
+        for (let k in array) {
+            diff.push(k);
+        }
+        return diff;
+    }
+    uniNum = arrDiff(uniArr, arr);
+    let sumNum = uniNum.reduce((a, b) => (a - 0) + (b - 0));
+    return sumNum;
+};
