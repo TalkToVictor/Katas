@@ -2676,3 +2676,20 @@ function repeats(arr) {
     let sumNum = uniNum.reduce((a, b) => (a - 0) + (b - 0));
     return sumNum;
 };
+
+// solution 
+
+function repeats(arr) {
+    let newArray = [];
+    let x;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (!newArray.includes(arr[i])) {
+            newArray.push(arr[i]);
+        } else if (newArray.includes(arr[i])) {
+            x = newArray.indexOf(arr[i]);
+            newArray.splice(x, 1);
+        }
+    }
+    return newArray.reduce((a, c) => a + c);
+}
