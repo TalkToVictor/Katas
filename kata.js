@@ -2693,3 +2693,21 @@ function repeats(arr) {
     }
     return newArray.reduce((a, c) => a + c);
 }
+
+// solution
+
+function repeats(arr) {
+    let hash = {}
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        hash[arr[i]] ? hash[arr[i]] = false : hash[arr[i]] = true;
+    }
+    for (let i = 0; i < arr.length; i++) {
+        if (hash[arr[i]]) {
+            sum += arr[i]
+        }
+    }
+    console.log(hash)
+    console.log(sum)
+    return sum
+};
