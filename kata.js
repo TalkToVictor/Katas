@@ -2711,3 +2711,31 @@ function repeats(arr) {
     console.log(sum)
     return sum
 };
+
+// solution 
+
+function repeats(arr) {
+    arr.sort((a, b) => { return a - b; });
+    return arr.reduce((prev, current, index, arr) => {
+        if (0 === binarySearch(arr, current, index + 1, arr.length - 1) && current != arr[index - 1]) {
+            prev += current;
+        }
+        return prev;
+    }, 0);
+};
+function binarySearch(arr, key, low, high) {  // binary search
+    let found = 0, mid;
+    while (low <= high) {
+        mid = Math.floor((low + high) / 2);
+        if (arr[mid] < key) {
+            low = mid + 1;
+        } else {
+            high = mid - 1;
+        }
+        if (arr[mid] == key) {
+            found = 1;
+            break;
+        }
+    }
+    return found;
+}
