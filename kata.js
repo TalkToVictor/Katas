@@ -2739,3 +2739,23 @@ function binarySearch(arr, key, low, high) {  // binary search
     }
     return found;
 }
+
+// solution
+
+function repeats(arr) {
+    let sum = 0;
+    //console.log(newarr)
+    for (let i = 0; i < arr.length; i++) {
+        let newarr = [];
+        for (let j = 0; j < arr.length; j++) {
+            if (arr[i] === arr[j] && i !== j) {
+                newarr.push(arr[j])
+                console.log(newarr)
+            }
+        }
+        if (newarr.length < 1) {
+            sum += arr[i];
+        }
+    }
+    return sum
+}
