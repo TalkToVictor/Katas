@@ -2779,3 +2779,28 @@ function repeats(arr) {
     }
     return sum;
 };
+
+// solution
+
+function repeats(arr) {
+    //..
+    var array = [];
+    var summa = 0;
+
+    for (var i = 0; i < arr.length; i++) {
+        var counter = 0;
+        for (var j = 0; j < arr.length; j++) {
+            if (arr[i] == arr[j]) {
+                counter++;
+            }
+        }
+        if (counter <= 1) {
+            array.push(arr[i]);
+        }
+    }
+    console.log(array);
+    for (var k = 0; k < array.length; k++) {
+        summa += array[k];
+    }
+    return summa;
+};
