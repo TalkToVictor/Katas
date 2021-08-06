@@ -2476,6 +2476,34 @@ function repeats(arr) {
 
     return total;
 
+    // solution 
+
+    /*
+Parameters: an array of numbers, two occur once and the rest occur twice
+Return: sum of numbers that only occur once
+Examples: [3, 4, 5, 3, 4, 6] => 5 + 6 = 11;
+Pseudocode:
+create an object with array, assigning values to number of occurances
+leon mentioned reduce, filter, indexOf; use reduce to create object
+*/
+    function repeats(arr) {
+        let obj = arr.reduce((acc, cur) => {
+            if (cur in acc) {
+                acc[cur] += 1
+            } else {
+                acc[cur] = 1;
+            }
+            return acc
+        }, {})
+        let result = 0
+        for (let num in obj) {
+            if (obj[num] === 1) {
+                result += Number(num)
+            }
+        }
+        return result
+    };
+
 
 };
 
