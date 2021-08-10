@@ -2550,6 +2550,22 @@ leon mentioned reduce, filter, indexOf; use reduce to create object
     };
 
 
+    // solution 
+
+    function repeats(arr) {
+        let equation = []
+        let sorted = arr.sort((a, b) => a - b)
+
+        for (let i = 0; i < sorted.length; i++) {
+            if (sorted[i] !== sorted[i + 1] && sorted[i] !== sorted[i - 1]) {
+                equation.push(sorted[i])
+            }
+        }
+
+        return equation.reduce((acc, num) => acc + num)
+    };
+
+
 };
 
 // solution 
