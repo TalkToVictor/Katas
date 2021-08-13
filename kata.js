@@ -3009,3 +3009,28 @@ function repeats(arr) {
 
 // solution
 
+const repeats = (arr) => {
+    const seen1 = new Set();
+    const seen2 = new Set();
+
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        const val = arr[i];
+
+        if (!seen1.has(val)) {
+            sum += val;
+            seen1.add(val);
+            continue;
+        }
+
+        if (!seen2.has(val)) {
+            sum -= val;
+            seen2.add(val);
+        }
+    }
+
+    return sum;
+};
+
+// solution
+
