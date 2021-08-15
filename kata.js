@@ -3034,3 +3034,23 @@ const repeats = (arr) => {
 
 // solution
 
+function repeats(arr) {
+    let nums = {};
+    for (let num of arr) {
+        if (nums[num] === undefined) {
+            nums[num] = 1;
+        } else {
+            nums[num] += 1;
+        }
+    }
+    let singleSum = 0;
+    for (let key in nums) {
+        if (nums[key] < 2) {
+            singleSum += +key;
+        }
+    }
+    return singleSum;
+};
+
+// solution
+
