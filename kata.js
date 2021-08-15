@@ -3054,3 +3054,16 @@ function repeats(arr) {
 
 // solution
 
+function repeats(arr) {
+    let result = 0;
+    for (let i = 0; i < arr.length; i++) {
+        const count = arr.reduce((pre, cur) => (cur === arr[i]) ? ++pre : pre, 0)
+        if (count === 1) {
+            result += arr[i];
+        }
+    }
+    return result
+};
+
+// solution
+
