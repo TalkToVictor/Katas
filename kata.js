@@ -3085,3 +3085,19 @@ function repeats(arr) {
 
 // solution
 
+function repeats(arr) {
+    const arrSort = arr.slice().sort((a, b) => a - b);
+
+    let result = 0;
+
+    for (let i = 0; i <= arrSort.length; i++) {
+        if (arrSort[i] !== arrSort[i - 1] && arrSort[i] !== arrSort[i + 1]) {
+            result += arrSort[i];
+        }
+    }
+
+    return result
+};
+
+// solution
+
