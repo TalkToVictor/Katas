@@ -3067,3 +3067,21 @@ function repeats(arr) {
 
 // solution
 
+function repeats(arr) {
+    let result = 0
+    let resultArray = []
+
+    for (let i = 0; i < arr.length; i++) {
+
+        if (!resultArray.includes(arr[i])) { resultArray.push(arr[i]) }
+        else { resultArray = resultArray.filter((index) => { return index !== arr[i] }) }
+    }
+
+    for (let i = 0; i < resultArray.length; i++) {
+        result += resultArray[i]
+    }
+    return result
+};
+
+// solution
+
