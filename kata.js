@@ -3101,3 +3101,22 @@ function repeats(arr) {
 
 // solution
 
+function repeats(arr) {
+    let arrSum = [];
+    let sumAll = 0;
+    let sumRepeat = 0;
+    arr.sort(function (a, b) { return a - b });
+    for (let i = 0; i < arr.length; i++) {
+        sumAll += arr[i];
+        if (arr[i] === arr[i + 1]) {
+            arrSum.push(arr[i]);
+        }
+    }
+    for (let i = 0; i < arrSum.length; i++) {
+        sumRepeat += arrSum[i];
+    }
+    return sumAll - 2 * sumRepeat;
+};
+
+// solution
+
