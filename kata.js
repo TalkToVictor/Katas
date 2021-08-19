@@ -3120,3 +3120,25 @@ function repeats(arr) {
 
 // solution
 
+function repeats(arr) {
+    //..  
+    let newArr = arr.filter((value, index) => {
+        return arr.indexOf(value) !== index;
+    });
+    let i = arr.length,
+        j = newArr.length;
+
+    while (i--) {
+        while (j--) {
+            if (arr[i] === newArr[j]) {
+                arr.splice(i, 1);
+                break;
+            }
+        }
+        j = newArr.length;
+    }
+    return arr.reduce((a, b) => a + b);
+};
+
+// solution
+
