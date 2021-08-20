@@ -3140,5 +3140,25 @@ function repeats(arr) {
     return arr.reduce((a, b) => a + b);
 };
 
+// solution 
+
+function repeats(arr) {
+    let sum = 0;
+    const occurrence = {};
+
+    arr.forEach(num => {
+        occurrence[num] ? occurrence[num]++ : occurrence[num] = 1;
+    })
+
+    for (let num in occurrence) {
+        if (occurrence[num] === 1) {
+            sum += parseInt(num);
+        }
+    }
+
+    return sum;
+
+}
+
 // solution
 
