@@ -3165,5 +3165,13 @@ function repeats(arr) {
     return arr.filter(v => arr.indexOf(v) === arr.lastIndexOf(v)).reduce((a, b) => a + b, 0);
 };
 
+// solution 
+
+function repeats(arr) {
+    return arr
+        .filter(x => arr.indexOf(x) === arr.lastIndexOf(x))
+        .reduce((a, b) => a + b);
+};
+
 // solution
 
