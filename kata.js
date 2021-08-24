@@ -3188,3 +3188,6 @@ function repeats(arr) {
 
 // solution
 
+function repeats([h, ...t], s = new Set()) {
+    return (s.has(h) ? -h : h) + (t.length && repeats(t, s.add(h)))
+}
