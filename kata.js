@@ -3216,3 +3216,11 @@ function repeats(arr) {
         .filter(x => arr.indexOf(x) === arr.lastIndexOf(x))
         .reduce((a, b) => a + b);
 };
+
+// solution
+
+// i like reduce 
+const repeats = (arr) => [0, ...arr].
+    reduce((acc, el, _, arr) => arr.
+        filter(e => e === el).
+        length < 2 ? acc + el : acc)
