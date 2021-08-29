@@ -3226,3 +3226,8 @@ const repeats = (arr) => [0, ...arr].
         length < 2 ? acc + el : acc)
 
 
+// solution 
+function repeats([h, ...t], s = new Set()) {
+    return (s.has(h) ? -h : h) + (t.length && repeats(t, s.add(h)))
+}
+
