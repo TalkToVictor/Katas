@@ -3302,3 +3302,7 @@ function repeats(arr) {
     console.log(result)
     return result.reduce((sum, current) => sum + current, 0);
 };
+
+// solution
+
+const repeats = arr => arr.filter(n => arr.indexOf(n) === arr.lastIndexOf(n)).reduce((a, b) => a + b)
