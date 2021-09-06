@@ -3306,3 +3306,14 @@ function repeats(arr) {
 // solution
 
 const repeats = arr => arr.filter(n => arr.indexOf(n) === arr.lastIndexOf(n)).reduce((a, b) => a + b)
+
+// solution
+function repeats(arr) {
+    let counts = arr.reduce((cnts, num) => {
+        if (!cnts[num]) cnts[num] = 0;
+        cnts[num]++;
+        return cnts;
+    }, {});
+
+    return Object.entries(counts).reduce((sum, [num, cnt]) => cnt == 1 ? sum + +num : sum, 0);
+};
