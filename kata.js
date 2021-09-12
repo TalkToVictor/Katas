@@ -3393,3 +3393,14 @@ function repeats(arr) {
     }
     return count;
 };
+
+// solution
+
+const repeats = (arr) =>
+    // iterate over elements and filter
+    arr.filter((x) =>
+        // get the count of the current element in array
+        // and filter based on the count
+        arr.filter((y) =>
+            // compare with current element
+            y == x).length == 1).reduce((a, b) => a + b);
