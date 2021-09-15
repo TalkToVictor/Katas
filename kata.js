@@ -3414,3 +3414,27 @@ function repeats(arr) {
     arr.map(n => dup_arr.includes(n) ? dup_arr.map(el => el == n && new_arr.push(el)) : dup_arr.push(n))
     return dup_arr.filter(num => !new_arr.includes(num)).reduce((acc, cv) => acc + cv)
 }
+
+// solution 
+function repeats(arr) {
+    //..
+    var array = [];
+    var summa = 0;
+
+    for (var i = 0; i < arr.length; i++) {
+        var counter = 0;
+        for (var j = 0; j < arr.length; j++) {
+            if (arr[i] == arr[j]) {
+                counter++;
+            }
+        }
+        if (counter <= 1) {
+            array.push(arr[i]);
+        }
+    }
+    console.log(array);
+    for (var k = 0; k < array.length; k++) {
+        summa += array[k];
+    }
+    return summa;
+};
