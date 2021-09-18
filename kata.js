@@ -3454,3 +3454,19 @@ function repeats(arr) {
     console.log(result)
     return result.reduce((sum, current) => sum + current, 0);
 };
+
+// solution 
+
+const repeats = (arr) => {
+    const visited = {};
+
+    arr.forEach((number) => {
+        if (!visited[number]) visited[number] = 0;
+        visited[number] += 1;
+    });
+
+    return Object.entries(visited)
+        .filter(([, count]) => count === 1)
+        .map(([number]) => Number(number))
+        .reduce((acc, curr) => acc + curr, 0);
+};
