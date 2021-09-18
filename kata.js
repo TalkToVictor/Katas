@@ -3470,3 +3470,27 @@ const repeats = (arr) => {
         .map(([number]) => Number(number))
         .reduce((acc, curr) => acc + curr, 0);
 };
+
+// solution
+
+function repeats(arr) {
+    let charMap = {}
+
+    for (let char of arr) {
+        if (charMap.hasOwnProperty(char)) {
+            charMap[char]++
+        } else {
+            charMap[char] = 1;
+        }
+    }
+
+    let arr2 = []
+
+    for (let char in charMap) {
+        if (charMap[char] === 1) {
+            arr2.push(+char)
+        }
+    }
+
+    return arr2.reduce((a, b) => a + b)
+};
