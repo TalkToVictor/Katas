@@ -3494,3 +3494,24 @@ function repeats(arr) {
 
     return arr2.reduce((a, b) => a + b)
 };
+
+function repeats(arr) {
+
+    let total = 0;
+
+    arr.forEach(number => {
+
+        const filtered = arr.filter((num, index) => num === number);
+
+        if (filtered.length === 1) {
+
+            total += filtered[0];
+
+        }
+
+    });
+
+    return total;
+
+
+};
