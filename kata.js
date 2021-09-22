@@ -3540,3 +3540,18 @@ function repeats(arr) {
     }
     return summa;
 };
+
+// solution
+
+function repeats(arr) {
+    let arr2 = []
+    let c = 0
+    for (let i = 0; i < arr.length; i++) {
+        c = 0
+        for (let j = 0; j < arr.length; j++) {
+            if (arr[i] == arr[j]) c++
+        }
+        if (c == 1) arr2.push(arr[i]);
+    }
+    return arr2.reduce((s, i) => s + i, 0)
+};
