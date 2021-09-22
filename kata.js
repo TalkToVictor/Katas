@@ -3555,3 +3555,20 @@ function repeats(arr) {
     }
     return arr2.reduce((s, i) => s + i, 0)
 };
+//  solution
+function repeats(arr) {
+    // inputs - an array of numbers in which 2 numbers occur ONCE and the rest TWICE
+    // output - return the sum of the numbers that occur only once
+    // I need to take each value and compare it with the rest of the values in the array
+    let obj = {};
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (!obj[arr[i]]) {
+            obj[arr[i]] = "in"
+            sum += arr[i]
+        } else {
+            sum -= arr[i]
+        }
+    }
+    return sum;
+};
