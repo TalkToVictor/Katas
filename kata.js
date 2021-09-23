@@ -3572,3 +3572,11 @@ function repeats(arr) {
     }
     return sum;
 };
+
+// solution
+
+function repeats(arr) {
+    let newArr = arr.map(num => arr.indexOf(num) === arr.lastIndexOf(num) ? num : 0)
+    let sum = newArr.reduce((acc, curr) => acc + curr)
+    return sum
+};
