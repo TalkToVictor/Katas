@@ -3595,3 +3595,20 @@ function repeats(arr) {
     }
     return arr2.reduce((s, i) => s + i, 0)
 };
+
+// solution
+
+function repeats(arr) {
+    let reducer = arr.reduce((acc, val) => {
+        acc[val] = (acc[val] || 0) + 1
+        return acc
+    }, {})
+    let singles = 0
+
+    for (const [key, val] of Object.entries(reducer)) {
+        if (val === 1) {
+            singles += parseInt(key)
+        }
+    }
+    return singles
+};
