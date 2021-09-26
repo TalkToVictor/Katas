@@ -3612,3 +3612,11 @@ function repeats(arr) {
     }
     return singles
 };
+
+// solution 
+
+function repeats(arr) {
+    let set = new Set()
+    arr.forEach(x => set.has(x) ? set.delete(x) : set.add(x))
+    return [...set].reduce((s, v) => s + v, 0)
+}
