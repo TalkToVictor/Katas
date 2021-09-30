@@ -3666,3 +3666,16 @@ function repeats(arr) {
     }
     return summa;
 };
+
+// solution
+
+function repeats(arr) {
+    const uniques = [];
+
+    arr.map(v => {
+        if (uniques.includes(v)) uniques.splice(uniques.indexOf(v), 1);
+        else uniques.push(v);
+    });
+
+    return uniques.reduce((a, b) => a + b);
+};
