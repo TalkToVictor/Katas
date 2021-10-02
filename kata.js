@@ -3703,3 +3703,21 @@ function repeats(arr) {
     }
     return newArr[0] + newArr[1]
 };
+
+// solution
+
+function repeats(arr) {
+    //..
+    const singles = arr.reduce((obj, currVal) => {
+        obj[currVal] = (obj[currVal] || 0) + 1;
+        return obj;
+    }, {});
+
+    let result = 0;
+    for (let [key, val] of Object.entries(singles)) {
+        if (val === 1) {
+            result += +key;
+        }
+    }
+    return result;
+}
