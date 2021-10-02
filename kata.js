@@ -3689,3 +3689,17 @@ function repeats(arr) {
     arr.map(n => dup_arr.includes(n) ? dup_arr.map(el => el == n && new_arr.push(el)) : dup_arr.push(n))
     return dup_arr.filter(num => !new_arr.includes(num)).reduce((acc, cv) => acc + cv)
 }
+
+// Solution
+
+function repeats(arr) {
+    arr = arr.sort()
+    let newArr = []
+    for (i = 0; i < arr.length; i++) {
+        if (arr[i] === arr[i + 1]) {
+            i++
+        } else
+            newArr.push(arr[i])
+    }
+    return newArr[0] + newArr[1]
+};
