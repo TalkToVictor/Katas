@@ -3742,3 +3742,18 @@ function repeats(arr) {
     }
     return count;
 };
+
+// Solution
+
+function repeats(arr) {
+    var helper = {};
+    for (var i = 0; i < arr.length; ++i) {
+        if (helper[arr[i]] === undefined) {
+            helper[arr[i]] = 1;
+        } else {
+            delete helper[arr[i]];
+        }
+    }
+    var ks = Object.keys(helper);
+    return parseInt(ks[0]) + parseInt(ks[1]);
+};
