@@ -3808,3 +3808,11 @@ function repeats(arr) {
     console.log(result)
     return result.reduce((sum, current) => sum + current, 0);
 };
+
+// Solution 
+
+function repeats(arr) {
+    let save = []
+    let set = [...new Set(arr)].filter(el => arr.filter(e => e === el).length === 1)
+    return set.reduce((acc, cur) => acc + cur)
+};
