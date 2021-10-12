@@ -3825,3 +3825,10 @@ function repeats(arr) {
     arr.map(n => dup_arr.includes(n) ? dup_arr.map(el => el == n && new_arr.push(el)) : dup_arr.push(n))
     return dup_arr.filter(num => !new_arr.includes(num)).reduce((acc, cv) => acc + cv)
 }
+
+// solution
+function repeats(arr) {
+    let save = []
+    let set = [...new Set(arr)].filter(el => arr.filter(e => e === el).length === 1)
+    return set.reduce((acc, cur) => acc + cur)
+};
