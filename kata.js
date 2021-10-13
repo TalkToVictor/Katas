@@ -3832,3 +3832,16 @@ function repeats(arr) {
     let set = [...new Set(arr)].filter(el => arr.filter(e => e === el).length === 1)
     return set.reduce((acc, cur) => acc + cur)
 };
+
+// Solution
+
+function repeats(arr) {
+    const uniques = [];
+
+    arr.map(v => {
+        if (uniques.includes(v)) uniques.splice(uniques.indexOf(v), 1);
+        else uniques.push(v);
+    });
+
+    return uniques.reduce((a, b) => a + b);
+};
