@@ -3874,3 +3874,19 @@ function repeats(arr) {
 function repeats(arr) {
     return arr.filter(v => arr.indexOf(v) === arr.lastIndexOf(v)).reduce((a, b) => a + b, 0);
 };
+
+// Solution
+
+function repeats(arr) {
+    let unique = []
+    for (let i = 0; i < arr.length; i++) {
+        if (arr.indexOf(arr[i]) === arr.lastIndexOf(arr[i])) {
+            unique.push(arr[i])
+        }
+    }
+    let count = 0
+    for (let j = 0; j < unique.length; j++) {
+        count += unique[j]
+    }
+    return count
+};
