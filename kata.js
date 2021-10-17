@@ -3890,3 +3890,13 @@ function repeats(arr) {
     }
     return count
 };
+
+// Solution
+
+function repeats(arr) {
+    var z = arr.filter(function (v) {
+        return arr.filter(function (v1) {
+            return v1 == v;
+        }).length == 1;
+    }); return z.reduce((x, y) => x + y, 0);
+};
