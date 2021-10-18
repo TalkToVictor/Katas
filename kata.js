@@ -3900,3 +3900,22 @@ function repeats(arr) {
         }).length == 1;
     }); return z.reduce((x, y) => x + y, 0);
 };
+
+// Solution
+
+function repeats(arr) {
+    const map = new Map()
+    for (let i = 0; i < arr.length; i++) {
+        if (!map.has(arr[i])) { map.set(arr[i], 1) }
+        else {
+            let contador = map.get(arr[i])
+            contador = contador + 1;
+            map.set(arr[i], contador)
+        }
+    }
+    let onlyAppearOnce = []
+    for (let key of map.keys()) {
+        if (map.get(key) === 1) { onlyAppearOnce.push(key) }
+    }
+    return onlyAppearOnce.reduce((a, b) => a + b)
+}
