@@ -3919,3 +3919,19 @@ function repeats(arr) {
     }
     return onlyAppearOnce.reduce((a, b) => a + b)
 }
+
+// solution
+
+function repeats(arr) {
+    nonDups = []
+    for (let i = 0; i < arr.length; i++) {
+        counts = 0
+        for (let j = 0; j < arr.length; j++) {
+            if (arr[j] == arr[i]) { counts++ }
+        }
+        if (counts == 1) {
+            nonDups.push(arr[i])
+        }
+    }
+    return nonDups[0] + nonDups[1]
+};
