@@ -3935,3 +3935,9 @@ function repeats(arr) {
     }
     return nonDups[0] + nonDups[1]
 };
+
+// Solution
+
+function repeats(arr) {
+    return arr.filter((n, i, a) => a.indexOf(n) === a.lastIndexOf(n)).reduce((s, i) => s + i, 0);
+};
