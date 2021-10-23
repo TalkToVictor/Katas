@@ -3966,3 +3966,14 @@ function repeats(arr) {
     }
     return count;
 };
+
+// solution
+function repeats(arr) {
+    let n = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr.filter((v) => v == arr[i]).length != 2) {
+            n.push(arr[i]);
+        }
+    }
+    return n[0] + n[1]
+}
