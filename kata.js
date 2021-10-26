@@ -4007,3 +4007,17 @@ function repeats(arr) {
     arr.map(n => dup_arr.includes(n) ? dup_arr.map(el => el == n && new_arr.push(el)) : dup_arr.push(n))
     return dup_arr.filter(num => !new_arr.includes(num)).reduce((acc, cv) => acc + cv)
 }
+
+// solution
+
+function repeats(arr) {
+    arr = arr.sort();
+    res = 0;
+    if (arr[0] != arr[1])
+        res += arr[0];
+    for (i = 1; i < arr.length; i++) {
+        if (arr[i] != arr[i - 1] && arr[i] != arr[i + 1])
+            res += arr[i];
+    }
+    return res;
+}; S
