@@ -4033,3 +4033,19 @@ function repeats(arr) {
     }
     return newArr.reduce((sum, num) => sum + num);
 };
+
+// Solution 
+
+function repeats(arr) {
+    total = 0
+    for (i = 0; i < arr.length; i++) {
+        if (getOccurrence(arr, arr[i]) == 1) {
+            total += arr[i]
+        }
+    }
+    return total
+};
+
+function getOccurrence(array, value) {
+    return array.filter((v) => (v === value)).length;
+}
