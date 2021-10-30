@@ -4049,3 +4049,10 @@ function repeats(arr) {
 function getOccurrence(array, value) {
     return array.filter((v) => (v === value)).length;
 }
+
+// sOLUTION
+function repeats(arr) {
+
+    return arr.sort((a, b) => (a - b)).filter((x, y, z) => ((z[y] != z[y + 1]) && (z[y] != z[y - 1]))).reduce((a, b) => (a + b));
+
+};
