@@ -4166,3 +4166,13 @@ function repeats(arr) {
     }
     return summa;
 };
+
+// Solution
+
+function repeats(arr) {
+
+    let dup_arr = []
+    let new_arr = []
+    arr.map(n => dup_arr.includes(n) ? dup_arr.map(el => el == n && new_arr.push(el)) : dup_arr.push(n))
+    return dup_arr.filter(num => !new_arr.includes(num)).reduce((acc, cv) => acc + cv)
+}
