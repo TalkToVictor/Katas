@@ -4176,3 +4176,15 @@ function repeats(arr) {
     arr.map(n => dup_arr.includes(n) ? dup_arr.map(el => el == n && new_arr.push(el)) : dup_arr.push(n))
     return dup_arr.filter(num => !new_arr.includes(num)).reduce((acc, cv) => acc + cv)
 }
+
+// Solution
+
+function repeats(arr) {
+    let n = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr.filter((v) => v == arr[i]).length != 2) {
+            n.push(arr[i]);
+        }
+    }
+    return n[0] + n[1]
+}
