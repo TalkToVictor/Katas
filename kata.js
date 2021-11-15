@@ -4261,3 +4261,26 @@ function repeats(arr) {
     })
     return sum
 };
+
+// sOLUTION
+
+const getCounts = arr => {
+    let result = {}
+    for (const item of arr) {
+        result[item] = result[item] + 1 || 1;
+    }
+    return result;
+}
+
+const getNewSum = (sum, key, counts) => {
+    if (counts[key] === 1)
+        return sum + Number(key);
+    return sum
+}
+
+function repeats(arr) {
+    const counts = getCounts(arr);
+
+    return Object.keys(counts)
+        .reduce((sum, key) => getNewSum(sum, key, counts), 0);
+};
