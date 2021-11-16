@@ -4284,3 +4284,21 @@ function repeats(arr) {
     return Object.keys(counts)
         .reduce((sum, key) => getNewSum(sum, key, counts), 0);
 };
+
+// Solution
+
+function repeats(arr) {
+    const resArr = [];
+    let res = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (resArr.includes(arr[i])) {
+            resArr.splice(resArr.indexOf(arr[i]), 1)
+        } else {
+            resArr.push(arr[i])
+        }
+    }
+    for (let i = 0; i < resArr.length; i++) {
+        res += resArr[i]
+    }
+    return res;
+};
