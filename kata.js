@@ -4318,3 +4318,34 @@ function repeats(arr) {
     }
     return singles.reduce((acc, curr) => acc + curr, 0)
 };
+
+
+// solution
+function repeats(arr) {
+    let obj = {};
+    let tab = [];
+
+    for (let i of arr) {
+        obj[i] = 0;
+    }
+
+    let test = Object.keys(obj);
+
+    for (let j = 0; j < arr.length; j++) {
+
+        test.map(a => {
+            if (a === arr[j].toString()) {
+                obj[a] += 1;
+            }
+        });
+
+    }
+    for (let elt in obj) {
+        if (obj[elt] == 1) {
+            tab.push(parseInt(elt));
+        }
+    }
+
+    return tab.reduce((a, b) => a + b);
+
+}
