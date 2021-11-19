@@ -4349,3 +4349,17 @@ function repeats(arr) {
     return tab.reduce((a, b) => a + b);
 
 }
+
+
+// ssolution
+function repeats(arr) {
+    let candidates = []
+    for (let i = 0; i < arr.length; i++) {
+        if (!candidates.includes(arr[i])) {
+            candidates.push(arr[i])
+        } else {
+            candidates.splice(candidates.indexOf(arr[i]), 1)
+        }
+    }
+    return candidates[0] + candidates[1]
+};
