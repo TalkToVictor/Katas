@@ -4363,3 +4363,22 @@ function repeats(arr) {
     }
     return candidates[0] + candidates[1]
 };
+
+// Solution
+
+const repeats = (arr) => {
+    let result = [];
+    let object = {};
+    arr.forEach((a, b) => { object[a] ? object[a]++ : object[a] = 1 });
+    for (let i = 0; i < Object.keys(object).length; i++) {
+        if (Object.values(object)[i] == 1) { result.push(Object.keys(object)[i]) }
+    }
+    return result.map(Number).reduce((a, b) => a + b);
+};
+
+console.log(repeats([4, 5, 7, 5, 4, 8]));                // should return 15
+console.log(repeats([9, 10, 19, 13, 19, 13]));      // should return 19
+console.log(repeats([16, 0, 11, 4, 8, 16, 0, 11])); // should return 12
+
+  // Object.keys(object)   <-- numbers
+  // Object.values(object) <-- count
