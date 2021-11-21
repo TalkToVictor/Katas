@@ -4401,3 +4401,23 @@ function repeats(arr) {
 
     return sum;
 };
+
+// solution
+
+function repeats(arr) {
+    let retValue = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        var currItem = arr[i];
+        var nextItemIdx = arr.indexOf(currItem, i + 1);
+        if (nextItemIdx >= 0) {
+            arr[i] = 0;
+            arr[nextItemIdx] = 0;
+        }
+    }
+
+    for (let i = 0; i < arr.length; i++) {
+        retValue += arr[i];
+    }
+    return retValue;
+};
