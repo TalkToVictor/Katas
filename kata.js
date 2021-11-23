@@ -4439,3 +4439,18 @@ function repeats(arr) {
 
     return sum;
 };
+
+// solution
+
+function repeats(arr) {
+    let computer = {}
+    arr.forEach(x => computer[x] = (computer[x] || 0) + 1)
+    let meanings = Object.values(computer)
+    let clefs = Object.keys(computer)
+    let storage = []
+
+    for (let i = 0; i < meanings.length; i++) {
+        meanings[i] === 1 ? storage.push(clefs[i]) : i
+    }
+    return storage.reduceRight((a, b) => +a + +b)
+};
