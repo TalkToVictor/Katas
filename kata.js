@@ -4454,3 +4454,17 @@ function repeats(arr) {
     }
     return storage.reduceRight((a, b) => +a + +b)
 };
+
+// SOLUTION
+function repeats(arr) {
+    let res = []
+    let sum = 0
+    for (let i = 0; i < arr.length; i++) {
+        if (res.includes(arr[i])) {
+            sum += arr[i] * 2
+        } else {
+            res.push(arr[i])
+        }
+    }
+    return arr.reduce((sum, item) => sum += item) - sum
+};
