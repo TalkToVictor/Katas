@@ -4489,3 +4489,14 @@ function repeats(arr) {
 function repeats([h, ...t], s = new Set()) {
     return (s.has(h) ? -h : h) + (t.length && repeats(t, s.add(h)))
 }
+
+// Solution
+function repeats(arr) {
+    let n = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr.filter((v) => v == arr[i]).length != 2) {
+            n.push(arr[i]);
+        }
+    }
+    return n[0] + n[1]
+}
