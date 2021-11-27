@@ -4483,3 +4483,9 @@ function repeats(arr) {
     var ks = Object.keys(helper);
     return parseInt(ks[0]) + parseInt(ks[1]);
 };
+
+// solution
+
+function repeats([h, ...t], s = new Set()) {
+    return (s.has(h) ? -h : h) + (t.length && repeats(t, s.add(h)))
+}
