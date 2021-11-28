@@ -4500,3 +4500,11 @@ function repeats(arr) {
     }
     return n[0] + n[1]
 }
+
+// solution 
+
+function repeats(arr) {
+
+    return arr.filter((num, pos) => { return arr.lastIndexOf(num) == arr.indexOf(num) }).reduce((a, b) => a + b, 0);
+
+};
