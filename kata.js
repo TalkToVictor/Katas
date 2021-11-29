@@ -4508,3 +4508,24 @@ function repeats(arr) {
     return arr.filter((num, pos) => { return arr.lastIndexOf(num) == arr.indexOf(num) }).reduce((a, b) => a + b, 0);
 
 };
+
+
+// Solution
+
+function repeats(arr) {
+    const dct = new Map();
+    let sum = 0;
+
+    arr.forEach((v) => {
+        const count = dct.get(v) || 0;
+        dct.set(v, count + 1);
+    })
+
+    dct.forEach((count, v) => {
+        if (count === 1) {
+            sum = sum + v
+        }
+    })
+
+    return sum
+};
