@@ -4565,3 +4565,19 @@ function repeats(arr) {
     }
     return arr.reduce((sum, item) => sum += item) - sum
 };
+
+// Solution
+
+function repeats(arr) {
+    let sortedArr = arr.sort((a, b) => a - b)
+    let sum = 0;
+
+    for (let i = 0; i < sortedArr.length; i++) {
+        if (sortedArr[i] === sortedArr[i + 1]) {
+            i++;
+        } else {
+            sum += sortedArr[i]
+        }
+    }
+    return sum
+};
