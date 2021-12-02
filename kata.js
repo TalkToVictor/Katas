@@ -4530,6 +4530,27 @@ function repeats(arr) {
     return sum
 };
 
+// solution
+
+function repeats(arr) {
+    const cache = {};
+    let res = 0;
+    for (let i = 0; i < arr.length; ++i) {
+        if (!cache[arr[i]]) {
+            cache[arr[i]] = 1;
+        } else {
+            ++cache[arr[i]];
+        }
+    }
+
+    for (let key in cache) {
+        if (cache[key] === 1) {
+            res += parseInt(key);
+        }
+    }
+    return res;
+};
+
 // Solution
 
 function repeats(arr) {
