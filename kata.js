@@ -4613,3 +4613,10 @@ for (var i = 0; i < arr.length; i++) {
 
 }
 return count;
+
+// Solution
+
+function repeats(arr) {
+    const foundOnce = (n) => arr.filter(x => x == n).length == 1;
+    return arr.filter(n => foundOnce(n)).reduce((a, b) => a + b);
+};
