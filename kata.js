@@ -4620,3 +4620,18 @@ function repeats(arr) {
     const foundOnce = (n) => arr.filter(x => x == n).length == 1;
     return arr.filter(n => foundOnce(n)).reduce((a, b) => a + b);
 };
+
+// Solution
+function repeats(arr) {
+    let seen = new Set()
+    let sum = 0
+    for (let x of arr) {
+        if (!seen.has(x)) {
+            seen.add(x);
+            sum += x;
+        }
+        else {
+            sum -= x
+        }
+    } return sum
+};
