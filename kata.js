@@ -4647,3 +4647,19 @@ function repeats(arr) {
     }
     return n[0] + n[1]
 }
+
+// Solution
+
+function repeats(arr) {
+    const uniqArr = [...new Set(arr)];
+    const uniqArrSum = uniqArr.reduce(function (acc, item) {
+        acc += item;
+        return acc;
+    }, 0);
+    const allArrSum = arr.reduce(function (acc, item) {
+        acc += item;
+        return acc;
+    }, 0);
+    const difference = allArrSum - uniqArrSum;
+    return uniqArrSum - difference;
+};
