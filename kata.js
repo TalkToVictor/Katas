@@ -4663,3 +4663,43 @@ function repeats(arr) {
     const difference = allArrSum - uniqArrSum;
     return uniqArrSum - difference;
 };
+
+// Solution
+
+function repeats(arr) {
+    let doubles = [];
+    for (let i = 0; i <= arr.length; i++) {
+        for (let y = i + 1; y <= arr.length; y++) {
+            if (arr[i] === arr[y]) {
+                doubles.push(arr[i])
+            }
+        }
+    }
+    let singles = [];
+    for (let x = 0; x < arr.length; x++) {
+        if (!doubles.includes(arr[x])) {
+            singles.push(arr[x])
+        }
+    }
+    return singles.reduce((a, b) => a + b);
+};
+
+// solution
+
+function repeats(arr) {
+    let numbersRepetitions = {};
+    let sum = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        let number = arr[i];
+
+        if (!numbersRepetitions[number]) {
+            numbersRepetitions[number] = 1;
+            sum += number;
+        } else {
+            sum -= number;
+        }
+    }
+
+    return sum;
+};
