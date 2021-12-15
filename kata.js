@@ -4703,3 +4703,23 @@ function repeats(arr) {
 
     return sum;
 };
+
+// Solution
+
+const repeats = arr => {
+
+    const numsCount = arr.reduce((acc, currNum) => {
+        acc[currNum] = acc[currNum] ? acc[currNum] + 1 : 1;
+        return acc;
+    }, {});
+
+    let oddNums = 0;
+
+    for (const key in numsCount) {
+        if (numsCount[key] % 2 !== 0) {
+            oddNums += +key;
+        }
+    }
+
+    return oddNums;
+};
