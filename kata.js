@@ -4738,3 +4738,14 @@ function repeats(arr) {
     var ks = Object.keys(helper);
     return parseInt(ks[0]) + parseInt(ks[1]);
 };
+
+// SOlution
+
+const repeats = (arr) =>
+    // iterate over elements and filter
+    arr.filter((x) =>
+        // get the count of the current element in array
+        // and filter based on the count
+        arr.filter((y) =>
+            // compare with current element
+            y == x).length == 1).reduce((a, b) => a + b);
