@@ -4749,3 +4749,8 @@ const repeats = (arr) =>
         arr.filter((y) =>
             // compare with current element
             y == x).length == 1).reduce((a, b) => a + b);
+
+// solution
+function repeats(a) {
+    return a.filter(x => a.indexOf(x) == a.lastIndexOf(x)).reduce((a, b) => a + b, 0)
+};
