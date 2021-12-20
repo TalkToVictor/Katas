@@ -4767,3 +4767,11 @@ function repeats(arr) {
 
     return uniques.reduce((a, b) => a + b);
 };
+
+// Solution
+
+function repeats(arr) {
+    let save = []
+    let set = [...new Set(arr)].filter(el => arr.filter(e => e === el).length === 1)
+    return set.reduce((acc, cur) => acc + cur)
+};
