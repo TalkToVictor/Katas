@@ -4775,3 +4775,19 @@ function repeats(arr) {
     let set = [...new Set(arr)].filter(el => arr.filter(e => e === el).length === 1)
     return set.reduce((acc, cur) => acc + cur)
 };
+
+// Solution
+
+function repeats(arr) {
+    //..
+    let result = [];
+    let sorted = arr.sort((a, b) => a - b);
+    console.log(arr.sort((a, b) => a - b))
+    for (let i = 0; i < sorted.length; i++) {
+        if (sorted[i] != sorted[i + 1] && sorted[i] != sorted[i - 1]) {
+            result.push(sorted[i])
+        }
+    }
+    console.log(result)
+    return result.reduce((sum, current) => sum + current, 0);
+};
