@@ -4791,3 +4791,12 @@ function repeats(arr) {
     console.log(result)
     return result.reduce((sum, current) => sum + current, 0);
 };
+
+// solution
+
+const { sum, countBy } = require('lodash')
+
+function repeats(arr) {
+    const count = countBy(arr)
+    return sum(arr.filter(x => count[x] == 1))
+};
