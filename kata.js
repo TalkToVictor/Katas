@@ -4800,3 +4800,11 @@ function repeats(arr) {
     const count = countBy(arr)
     return sum(arr.filter(x => count[x] == 1))
 };
+
+// solution
+
+// i like reduce 
+const repeats = (arr) => [0, ...arr].
+    reduce((acc, el, _, arr) => arr.
+        filter(e => e === el).
+        length < 2 ? acc + el : acc)
