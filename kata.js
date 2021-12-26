@@ -4867,3 +4867,19 @@ function repeats(arr) {
 
     return total;
 };
+
+// solution
+function repeats(arr) {
+    let sum = 0;
+    let dups = [];
+    for (i = 0; i < arr.length; i++) {
+        let new_arr = arr.slice(i + 1, arr.length);
+        if (new_arr.includes(arr[i]) || dups.includes(arr[i])) {
+            dups.push(arr[i]);
+            continue
+        } else {
+            sum += arr[i]
+        }
+    }
+    return sum;
+};
