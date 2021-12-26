@@ -4883,3 +4883,23 @@ function repeats(arr) {
     }
     return sum;
 };
+
+// solution
+
+function repeats(arr) {
+    //..
+    let sum = 0
+    let hash = {}
+    arr.forEach(n => {
+        if (hash[n]) {
+            hash[n]++
+        } else {
+            hash[n] = 1
+        }
+        sum += n
+        if (hash[n] > 1) {
+            sum -= n * 2
+        }
+    })
+    return sum
+};
