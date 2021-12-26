@@ -4915,3 +4915,20 @@ function repeats(arr) {
 
     return singles.reduce((a, v) => a + v, 0);
 };
+
+// solution
+
+function repeats(arr) {
+    const uniqArr = [...new Set(arr)];
+    const uniqArrSum = uniqArr.reduce(function (acc, item) {
+        acc += item;
+        return acc;
+    }, 0);
+    const allArrSum = arr.reduce(function (acc, item) {
+        acc += item;
+        return acc;
+    }, 0);
+    const difference = allArrSum - uniqArrSum;
+    return uniqArrSum - difference;
+};
+
