@@ -4842,3 +4842,14 @@ function repeats(arr) {
     return sum;
 };
 
+// solution
+
+function repeats(arr) {
+    arr.sort();
+    var newArr = [];
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i + 1] != arr[i]) newArr.push(arr[i]);
+        else i += 1;
+    }
+    return newArr.reduce((sum, num) => sum + num);
+};
