@@ -4903,3 +4903,15 @@ function repeats(arr) {
     })
     return sum
 };
+
+// Solution
+
+function repeats(arr) {
+    const singles = arr.filter(d => {
+        const isSingle = arr.filter(n => n === d).length === 1;
+
+        return isSingle;
+    });
+
+    return singles.reduce((a, v) => a + v, 0);
+};
