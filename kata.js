@@ -4853,3 +4853,17 @@ function repeats(arr) {
     }
     return newArr.reduce((sum, num) => sum + num);
 };
+
+// solution
+
+function repeats(arr) {
+    var total = 0;
+
+    for (let n of arr) {
+        if (arr.indexOf(n) === arr.lastIndexOf(n)) {
+            total = total + n;
+        }
+    }
+
+    return total;
+};
