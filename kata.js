@@ -4932,3 +4932,16 @@ function repeats(arr) {
     return uniqArrSum - difference;
 };
 
+// Solution
+
+function repeats(arr) {
+    const counter = {};
+    for (let i = 0; i < arr.length; i++) {
+        counter[arr[i]] = (counter[arr[i]] || 0) + 1;
+    }
+    let acc = 0;
+    for (const [key, value] of Object.entries(counter)) {
+        if (value === 1) acc += +key;
+    }
+    return acc;
+};
