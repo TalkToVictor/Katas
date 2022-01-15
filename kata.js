@@ -4999,3 +4999,12 @@ for (var k = 0; k < array.length; k++) {
     summa += array[k];
 }
 return summa;
+
+
+// solution
+
+function repeats(arr) {
+
+    return arr.sort((a, b) => (a - b)).filter((x, y, z) => ((z[y] != z[y + 1]) && (z[y] != z[y - 1]))).reduce((a, b) => (a + b));
+
+};
