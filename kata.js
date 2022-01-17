@@ -5023,3 +5023,19 @@ function repeats(arr) {
     }
     return res;
 };
+
+// Solution
+function repeats(numbers) {
+    let sum = 0
+
+    for (const number of numbers) {
+        const firstOccurence = numbers.indexOf(number)
+        const lastOccurence = numbers.lastIndexOf(number)
+
+        if (firstOccurence == lastOccurence) {
+            sum += number
+        }
+    }
+
+    return sum
+}
