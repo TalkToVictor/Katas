@@ -5052,3 +5052,19 @@ function repeats(arr) {
     }
     return count;
 };
+
+// Solution
+
+function repeats(arr) {
+    const obj = arr.reduce((number, curr) => {
+        number[curr] = number[curr] || 0
+        number[curr]++
+        return number
+    }, {})
+    let singles = []
+    for (const key in obj) {
+        if (obj[key] == 1) {
+            singles.push(Number(key))
+        }
+    }
+    return singles.reduce((acc, curr) => acc + curr, 0)
