@@ -5068,3 +5068,21 @@ function repeats(arr) {
         }
     }
     return singles.reduce((acc, curr) => acc + curr, 0)
+
+    //solution for damn kata
+
+    function repeats(arr) {
+        //..
+        let singles = []
+        for (let i = 0; i < arr.length; i++) {
+            let check = arr[i]
+            let checkArr = []
+            for (let j = 0; j < arr.length; j++) {
+                if (arr[j] == arr[i]) {
+                    checkArr.push(arr[j])
+                }
+            }
+            if (checkArr.length == 1) singles.push(checkArr[0])
+        }
+        return singles.reduce((acc, c) => acc + c)
+    }; 
