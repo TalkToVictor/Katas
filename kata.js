@@ -5107,3 +5107,21 @@ function repeats(arr) {
         }
         return singles.reduce((a, b) => a + b);
 
+
+        // solution
+
+        function repeats(arr) {
+            const occurs = arr.reduce((obj, el) => {
+                obj[el] = obj[el] + 1 || 1;
+                return obj;
+            }, {});
+
+            let sum = null;
+            for (let [key, value] of Object.entries(occurs)) {
+                if (value === 1) {
+                    if (sum != null) return sum + +key;
+                    sum = +key;
+                }
+            }
+        }
+
