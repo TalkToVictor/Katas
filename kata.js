@@ -5125,3 +5125,24 @@ function repeats(arr) {
             }
         }
 
+        // solution
+
+        function repeats(arr) {
+            let count,
+                res = []
+            //const filteredArr = [...new Set(arr)]
+            let counts = arr.reduce((counts, i) => {
+                counts[i] = (counts[i] || 0) + 1
+
+                return counts
+            }, {})
+
+            Object.keys(counts).reduce((arr, i) => {
+                if (counts[i] === 1) {
+                    res.push(Number(i))
+                }
+                return res
+            }, [])
+
+            return res.reduce((a, b) => a + b)
+        }
