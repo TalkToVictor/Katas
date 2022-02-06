@@ -5283,3 +5283,15 @@ function repeats(arr) {
 
             return sum
         }
+
+        // solution 
+        function repeats(arr) {
+            var count = 0;
+            for (var i = 0; i < arr.length; i++) {
+                if (arr.indexOf(arr[i]) === arr.lastIndexOf(arr[i])) {
+                    count += arr[i];
+                }
+
+            }
+            return count;
+        };
