@@ -5295,3 +5295,11 @@ function repeats(arr) {
             }
             return count;
         };
+
+        // solution
+
+        // i like reduce 
+        const repeats = (arr) => [0, ...arr].
+            reduce((acc, el, _, arr) => arr.
+                filter(e => e === el).
+                length < 2 ? acc + el : acc)
