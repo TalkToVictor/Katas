@@ -5322,3 +5322,22 @@ function repeats(arr) {
             }
             return singlesChicks.reduce((acc, val) => acc + val, 0);
         }//I solved this Kata on  [07-Feb-2022] ^_^ [03:52 PM]...#Hussam'sCodingDiary
+
+
+        // solution
+
+        function repeats(arr) {
+            let arr1 = [];
+            console.log(arr);
+            let sum = 0;
+            for (let i = 0; i < arr.length; i++) {
+                if (arr1[arr[i]] == undefined) {
+                    arr1[arr[i]] = arr[i];
+                    sum = sum + arr[i];
+                } else {
+                    arr1[arr[i]] = arr1[arr[i]] - arr[i];
+                    sum = sum - arr[i];
+                }
+            }
+            return sum;
+        };
