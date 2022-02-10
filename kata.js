@@ -5341,3 +5341,23 @@ function repeats(arr) {
             }
             return sum;
         };
+
+        // kata
+
+        function repeats(arr) {
+            let obj = {};
+            let array = [];
+            for (let el of arr) {
+                if (obj[el]) {
+                    obj[el] += 1
+                } else {
+                    obj[el] = 1
+                }
+            }
+            for (let key in obj) {
+                if (obj[key] === 1) {
+                    array.push(key)
+                }
+            }
+            return array.reduce((a, b) => +a + +b, 0)
+        };
