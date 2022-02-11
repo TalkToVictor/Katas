@@ -5361,3 +5361,25 @@ function repeats(arr) {
             }
             return array.reduce((a, b) => +a + +b, 0)
         };
+
+        // solution 
+        function repeats(arr) {
+            var sum = 0,
+                number = 0,
+                nextNumber = 0;
+            arr = arr.sort();
+            console.log(arr);
+
+            for (var i = 0; i < arr.length; i++) {
+                number = arr[i];
+                nextNumber = arr[i + 1];
+
+                if (number == nextNumber) {
+                    i++
+                }
+                else {
+                    sum += number;
+                }
+            }
+            return sum;
+        };
