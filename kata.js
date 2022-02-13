@@ -5402,3 +5402,19 @@ function repeats(arr) {
             }
             return singlesChicks.reduce((acc, val) => acc + val, 0);
         }//I solved this Kata on  [07-Feb-2022] ^_^ [03:52 PM]...#Hussam'sCodingDiary
+
+
+
+
+        // solution
+        function repeats(arr) {
+            let count = 0;
+            let sortedArr = arr.sort((a, b) => a - b);
+
+            for (let i = 0; i < sortedArr.length; i++) {
+                if (sortedArr[i] != sortedArr[i + 1] && sortedArr[i] != sortedArr[i - 1]) {
+                    count += sortedArr[i];
+                }
+            }
+            return count;
+        };
