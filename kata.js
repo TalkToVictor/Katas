@@ -5418,3 +5418,17 @@ function repeats(arr) {
             }
             return count;
         };
+
+
+        // Solution
+
+        function repeats(arr) {
+            arr.sort()
+            let result = [...arr];
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] === arr[i + 1]) {
+                    result = result.filter(x => x !== arr[i])
+                }
+            }
+            return result.reduce((x, y) => x + y)
+        };
