@@ -5464,3 +5464,16 @@ function repeats(arr) {
             arr.forEach(x => set.has(x) ? set.delete(x) : set.add(x))
             return [...set].reduce((s, v) => s + v, 0)
         }
+
+        // solution
+
+        function repeats(arr) {
+            const sortedArr = arr.sort((a, b) => a - b);
+            let sum = 0;
+            sortedArr;
+            for (let i = 0; i < sortedArr.length; i++) {
+                if (sortedArr[i] !== sortedArr[i + 1]) sum += sortedArr[i];
+                else i++;
+            }
+            return sum;
+        }
