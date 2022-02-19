@@ -5477,3 +5477,13 @@ function repeats(arr) {
             }
             return sum;
         }
+
+        // solution
+
+        function repeats(arr) {
+            var count = {};
+            arr.forEach(function (i) {
+                count[i] = (count[i] || 0) + 1;
+            });
+            return arr.filter(a => count[a] < 2).reduce((a, b) => a + b)
+        };
