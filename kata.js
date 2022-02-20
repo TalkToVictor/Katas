@@ -5487,3 +5487,26 @@ function repeats(arr) {
             });
             return arr.filter(a => count[a] < 2).reduce((a, b) => a + b)
         };
+
+
+        // solution
+        function repeats(arr) {
+            const tmp = {}
+
+            for (let i = 0; i < arr.length; i++) {
+                const currentValue = arr[i]
+
+                tmp[currentValue] = tmp[currentValue] ? tmp[currentValue] += 1 : 1
+            }
+
+            return Object.keys(tmp).reduce((result, key) => {
+                if (tmp[key] === 1) {
+                    result += parseInt(key)
+                }
+
+                return result
+            }, 0)
+
+
+            //  return [...new Set(arr)].reduce((a, b) => a +  b)
+        };
