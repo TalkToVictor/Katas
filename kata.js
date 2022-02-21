@@ -5510,3 +5510,25 @@ function repeats(arr) {
 
             //  return [...new Set(arr)].reduce((a, b) => a +  b)
         };
+
+
+        // solution 
+        function repeats(items) {
+            let result = [];
+            let container = {};
+
+            for (let i = 0; i < items.length; ++i) {
+                if (items[i] in container) {
+                    container[items[i]]++;
+                } else {
+                    container[items[i]] = 1;
+                }
+            }
+
+            for (let k in container) {
+                if (container[k] == 1) {
+                    result.push(k);
+                }
+            }
+            return result.reduce((a, b) => (+a) + (+b))
+        };
