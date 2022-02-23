@@ -5549,3 +5549,18 @@ function repeats(arr) {
             var ks = Object.keys(helper);
             return parseInt(ks[0]) + parseInt(ks[1]);
         };
+
+
+        // solution
+
+        function repeats(arr) {
+            arr = arr.sort();
+            res = 0;
+            if (arr[0] != arr[1])
+                res += arr[0];
+            for (i = 1; i < arr.length; i++) {
+                if (arr[i] != arr[i - 1] && arr[i] != arr[i + 1])
+                    res += arr[i];
+            }
+            return res;
+        };
