@@ -5564,3 +5564,9 @@ function repeats(arr) {
             }
             return res;
         };
+
+        // solution
+
+        function repeats(a) {
+            return a.filter(x => a.indexOf(x) == a.lastIndexOf(x)).reduce((a, b) => a + b, 0)
+        };
