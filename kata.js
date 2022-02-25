@@ -5570,3 +5570,15 @@ function repeats(arr) {
         function repeats(a) {
             return a.filter(x => a.indexOf(x) == a.lastIndexOf(x)).reduce((a, b) => a + b, 0)
         };
+
+        // solution
+
+        function repeats(arr) {
+            let n = [];
+            for (let i = 0; i < arr.length; i++) {
+                if (arr.filter((v) => v == arr[i]).length != 2) {
+                    n.push(arr[i]);
+                }
+            }
+            return n[0] + n[1]
+        }
