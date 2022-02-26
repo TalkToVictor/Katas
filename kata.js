@@ -5582,3 +5582,18 @@ function repeats(arr) {
             }
             return n[0] + n[1]
         }
+
+        // solution
+
+        function repeats(arr) {
+            let result = [];
+            let occurances = {};
+
+            for (let num of arr) {
+                occurances[num] = occurances[num] ? occurances[num] + 1 : 1;
+            }
+
+            for (let p in occurances) { if (occurances[p] === 1) { result.push(p) } }
+
+            return result.map(Number).reduce((a, b) => (a + b));
+        };
