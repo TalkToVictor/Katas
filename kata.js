@@ -5615,3 +5615,16 @@ function repeats(arr) {
             return filtered.reduce((a, b) => Number(a[0]) + Number(b[0]));
 
         };
+
+        // solution
+        function repeats(arr) {
+            let obj = {};
+            let sum = 0;
+            arr.forEach(num => obj[num] ? obj[num]++ : obj[num] = 1)
+            for (let i in obj) {
+                if (obj[i] === 1) {
+                    sum += +i;
+                }
+            }
+            return sum;
+        };
