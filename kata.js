@@ -5645,3 +5645,17 @@ function repeats(arr) {
 
             return sum
         }
+
+        // solution
+        function repeats(arr) {
+            //..
+
+            let result = 0;
+
+            arr.forEach((num) => {
+                if (arr.indexOf(num) === arr.lastIndexOf(num)) {
+                    result += num;
+                }
+            });
+
+            return result;
