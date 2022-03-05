@@ -5659,3 +5659,22 @@ function repeats(arr) {
             });
 
             return result;
+
+            // solution
+
+            function repeats(arr) {
+                let hash = {};
+
+                for (let i = 0; i < arr.length; i++) {
+                    if (hash.hasOwnProperty(arr[i])) {
+                        hash[arr[i]]++;
+                    }
+                    else {
+                        hash[arr[i]] = 1;
+                    }
+                }
+
+                const filtered = (Object.entries(hash).filter(a => a[1] === 1));
+                return filtered.reduce((a, b) => Number(a[0]) + Number(b[0]));
+
+            };
