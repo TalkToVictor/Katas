@@ -5823,3 +5823,37 @@ function repeats(arr) {
                 console.log(result)
                 return result.reduce((sum, current) => sum + current, 0);
             };
+
+            // solution
+
+            function repeats(arr) {
+                let i;
+                let sum = 0;
+                arr.sort((a, b) => {
+                    return a - b;
+                });
+                for (i = 0; i < arr.length; i += 2) {
+                    if (arr[i] !== arr[i + 1]) {
+                        sum += arr[i];
+                        i--;
+                    }
+                }
+
+                return sum;
+            };
+            // solution
+            function repeats(arr) {
+                let i;
+                let sum = 0;
+                arr.sort((a, b) => {
+                    return a - b;
+                });
+                for (i = 0; i < arr.length; i += 2) {
+                    if (arr[i] !== arr[i + 1]) {
+                        sum += arr[i];
+                        i--;
+                    }
+                }
+
+                return sum;
+            };
