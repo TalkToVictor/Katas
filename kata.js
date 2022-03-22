@@ -5889,3 +5889,10 @@ function repeats(arr) {
                 }
                 return n[0] + n[1]
             }
+
+            //solution
+            // i like reduce 
+            const repeats = (arr) => [0, ...arr].
+                reduce((acc, el, _, arr) => arr.
+                    filter(e => e === el).
+                    length < 2 ? acc + el : acc)
