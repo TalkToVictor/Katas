@@ -5905,3 +5905,21 @@ function repeats(arr) {
                 arr.map(n => dup_arr.includes(n) ? dup_arr.map(el => el == n && new_arr.push(el)) : dup_arr.push(n))
                 return dup_arr.filter(num => !new_arr.includes(num)).reduce((acc, cv) => acc + cv)
             }
+
+            // Solution
+
+            function repeats(arr) {
+                let seen = new Set();
+                let sum = 0;
+
+                for (let v of arr) {
+                    if (!seen.has(v)) {
+                        seen.add(v);
+                        sum += v;
+                    } else {
+                        sum -= v;
+                    }
+                }
+
+                return sum;
+            };
