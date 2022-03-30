@@ -5947,3 +5947,6 @@ function repeats(arr) {
                 }
                 return summa;
             };
+
+            // solution
+            const repeats = (arr) => arr.reduce((reducer, item, ind, array) => reducer += array.filter(i => i === item).length === 1 ? item : 0, 0);
