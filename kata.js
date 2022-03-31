@@ -5949,4 +5949,13 @@ function repeats(arr) {
             };
 
             // solution
-            const repeats = (arr) => arr.reduce((reducer, item, ind, array) => reducer += array.filter(i => i === item).length === 1 ? item : 0, 0);
+            const repeats = (arr)
+
+                => arr.reduce((reducer, item, ind, array) => reducer += array.filter(i => i === item).length === 1 ? item : 0, 0);
+
+            // function repeats(arr){
+            var set = [...new Set(arr)]
+            var total1 = arr.reduce((a, b) => (a + b))
+            var total2 = set.reduce((a, b) => (a + b))
+            return total2 * 2 - total1
+        };
