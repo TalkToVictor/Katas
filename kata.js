@@ -5959,3 +5959,15 @@ function repeats(arr) {
             var total2 = set.reduce((a, b) => (a + b))
             return total2 * 2 - total1
         };
+
+        // Solution
+
+        function repeats(arr) {
+            arr.sort();
+            var newArr = [];
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i + 1] != arr[i]) newArr.push(arr[i]);
+                else i += 1;
+            }
+            return newArr.reduce((sum, num) => sum + num);
+        };
