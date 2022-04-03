@@ -5971,3 +5971,12 @@ function repeats(arr) {
             }
             return newArr.reduce((sum, num) => sum + num);
         };
+
+        // solution
+        function repeats(arr) {
+            var set = [...new Set(arr)]
+            var total1 = arr.reduce((a, b) => (a + b))
+            var total2 = set.reduce((a, b) => (a + b))
+            return total2 * 2 - total1
+        };
+
