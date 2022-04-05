@@ -5993,3 +5993,10 @@ function repeats(arr) {
             var ks = Object.keys(helper);
             return parseInt(ks[0]) + parseInt(ks[1]);
         };
+
+        // solution
+        function repeats(arr) {
+            let save = []
+            let set = [...new Set(arr)].filter(el => arr.filter(e => e === el).length === 1)
+            return set.reduce((acc, cur) => acc + cur)
+        };
