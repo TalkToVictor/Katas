@@ -6011,3 +6011,18 @@ function repeats(arr) {
             }
             return count;
         };
+
+        // solution
+        function repeats(arr) {
+            let y = 0;
+            let sum = 0;
+            for (let i = 0, len = arr.length; i < len; i++) {
+                y = arr[i];
+                arr.splice(i, 1)
+                if (!arr.includes(y)) {
+                    sum += y;
+                }
+                arr.splice(i, 0, y)
+            }
+            return sum;
+        };
