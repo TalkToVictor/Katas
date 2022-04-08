@@ -6026,3 +6026,22 @@ function repeats(arr) {
             }
             return sum;
         };
+
+        // solution
+
+        function repeats(arr) {
+            let singlesChicks = [];
+            for (let i = 0; i < arr.length; i++) {
+                let checkChicks = false;
+                for (let k = 0; k < arr.length; k++) {
+                    if (i === k) {
+                    } else {
+                        if (arr[i] === arr[k]) {
+                            checkChicks = true;
+                        }
+                    }
+                }
+                if (!checkChicks) singlesChicks.push(arr[i]);
+            }
+            return singlesChicks.reduce((acc, val) => acc + val, 0);
+        }//I solved this Kata on  [07-Feb-2022] ^_^ [03:52 PM]...#Hussam'sCodingDiary
