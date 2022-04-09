@@ -6045,3 +6045,12 @@ function repeats(arr) {
             }
             return singlesChicks.reduce((acc, val) => acc + val, 0);
         }//I solved this Kata on  [07-Feb-2022] ^_^ [03:52 PM]...#Hussam'sCodingDiary
+
+        // solution
+        function repeats(arr) {
+            const singles = [];
+            for (let i = 0; i < arr.length; i++) {
+                if (i === arr.indexOf(arr[i]) && i === arr.lastIndexOf(arr[i])) singles.push(arr[i]);
+            }
+            return singles.reduce((a, b) => a + b, 0);
+        }
