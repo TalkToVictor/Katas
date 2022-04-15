@@ -6086,3 +6086,10 @@ function repeats(arr) {
             }
             var ks = Object.keys(helper);
             return parseInt(ks[0]) + parseInt(ks[1]);
+
+            // solution
+            // i like reduce 
+            const repeats = (arr) => [0, ...arr].
+                reduce((acc, el, _, arr) => arr.
+                    filter(e => e === el).
+                    length < 2 ? acc + el : acc)
